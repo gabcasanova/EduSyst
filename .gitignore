@@ -1,0 +1,11 @@
+# Desabilitar backups do Visual Paradigm
+*.bak*
+
+# Ambiente web
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+sisescola_web/.settings
+sisescola_web/.idea
+**/nbproject/private/
+sisescola_web/build
+

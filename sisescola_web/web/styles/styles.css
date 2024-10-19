@@ -1,0 +1,132 @@
+/* Barra de Navegação */
+#logo {
+    width: 150px;
+    height: auto;
+}
+
+#barra_navegacao {
+    background-color: #023047;
+}
+
+#barra_navegacao a:hover {
+    color: #fb8500;
+}
+
+#login_link {
+    color: white;
+}
+
+#login_link:hover {
+    color: #fb8500;
+}
+
+
+/* Página */
+body {
+    background-color: #219ebc;
+}
+
+#pagina {
+    background-color: #8ecae6;
+    box-shadow:0px 0px 40px rgba(0, 0, 0, 0.8);
+}
+
+#pagina a {
+    color: black;
+    text-decoration: none;
+}
+
+#pagina a:hover {
+    color: #023047;
+    text-decoration: underline;
+}
+
+/* Rodapé */
+#rodape {
+    background-color: #023047;
+    color: white;
+}
+
+#rodape a{
+    color: white;
+    text-decoration: none;
+}
+
+#rodape a:hover {
+    color: #fb8500;
+}
+
+/*----------- GERAL -----------*/
+.carr {                                    /* Carrossel */
+    box-shadow: 0px 0px 35px black;
+}
+
+.carrLegenda { 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.botaoLaranja {                            /* Botão */
+    background-color: #fb8500;
+    border: 0px;
+}
+
+.botaoLaranja:hover {
+    background-color: #c46800;
+}
+
+.textoProf {
+    text-indent: 45px;
+    text-align: justify;
+}.nav-item {
+
+}
+
+/*----------- AMBIENTE -----------*/
+.user_bar {
+    background-color: #023047;
+    
+    border-style: solid;
+    border-width: 7px;
+    border-color: #8ecae6;
+    
+    color: white;
+}
+
+.pfp {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.lista_info {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.botao_ambiente {
+    border-style: solid;
+    border-width: 4px;
+    border-color: #023047;
+    text-align: center;
+    transition: 0.3s;
+    max-width: 225px;
+}
+
+.botao_ambiente a {
+    color: black !important;
+    text-decoration: none !important; 
+}
+
+.botao_ambiente:hover {
+    background-color: #023047;
+    box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+}
+
+.botao_ambiente:hover a{
+    color: white !important;
+}
+
+.botao_ambiente:hover img{
+    filter: invert(1);
+}
