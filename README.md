@@ -54,3 +54,4 @@ A complexidade na organização de dados, a comunicação deficiente entre aluno
 * **Matheus Menezes** - Desenvolvedor do ambiente desktop
 * **Gabriel Ferreira** - Desenvovledor do banco de dados
 * **Gabriel Henrique** - Documentação
+* **Prof. Dr. Vinicius Claro** - Orientação do TCC
