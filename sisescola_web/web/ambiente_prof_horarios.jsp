@@ -4,6 +4,7 @@
     Author     : con_c
 --%>
 
+<%@page import="java.time.Year"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@page import="util.DBUtil"%>
@@ -60,7 +61,8 @@
                                     + "INNER JOIN horarios_materias ON horarios_materias.Horario_ID = horarios.Id_Horario "
                                     + "INNER JOIN materias ON materias.Id_Materia = horarios_materias.Materia_ID "
                                     + "INNER JOIN turmas ON turmas.Id_Turma = horarios_materias.Turma_ID "
-                                    + "where professores.Id_Professor = " + professor.getId();
+                                    + "where professores.Id_Professor = " + professor.getId()
+                                    + " and turmas.ano = " + Year.now().getValue();
                                     rs = stmt.executeQuery(sql); // Executar o comando SQL.
                             %>
 

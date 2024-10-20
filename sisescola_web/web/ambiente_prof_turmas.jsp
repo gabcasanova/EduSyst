@@ -4,6 +4,7 @@
     Author     : con_c
 --%>
 
+<%@page import="java.time.Year"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@page import="util.DBUtil"%>
@@ -62,7 +63,9 @@
                                     + "inner join horarios on horarios.Id_Horario = horarios_materias.Horario_ID "
                                     + "inner join professores_horarios on professores_horarios.Horario_ID = horarios.Id_Horario "
                                     + "inner join professores on professores.Id_Professor = professores_horarios.Professor_ID "
-                                    + "where professores.Id_Professor = " + professor.getId() + " order by turmas.ano, turmas.classe, materias.nome asc;";
+                                    + "where professores.Id_Professor = " + professor.getId() 
+                                    + " and turmas.ano = " + Year.now().getValue()
+                                    + " order by turmas.ano, turmas.classe, materias.nome asc;";
                                     rs = stmt.executeQuery(sql); // Executar o comando SQL.
                             %>
 

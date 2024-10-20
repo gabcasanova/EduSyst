@@ -4,6 +4,7 @@
     Author     : con_c
 --%>
 
+<%@page import="java.time.Year"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@page import="util.DBUtil"%>
@@ -54,7 +55,7 @@
                                     conn = DBUtil.getConnection(); // Conectar com o banco de dados.
                                     stmt = conn.createStatement(); // Preparar um comando SQL.
 
-                                    String sql = "select alunos.nome, alunos.email, responsaveis.nome, responsaveis.email, turmas.classe, turmas.ano from alunos "
+                                    String sql = "select distinct alunos.nome, alunos.email, responsaveis.nome, responsaveis.email, turmas.classe, turmas.ano from alunos "
                                     + "inner join responsaveis on responsaveis.Id_Responsavel = alunos.Responsavel_ID "
                                     + "inner join turmas_alunos on turmas_alunos.Aluno_ID = alunos.Id_Aluno "
                                     + "inner join turmas on turmas.Id_Turma = turmas_alunos.Turma_ID "
@@ -62,7 +63,9 @@
                                     + "inner join horarios on horarios.Id_Horario = horarios_materias.Horario_ID "
                                     + "inner join professores_horarios on professores_horarios.Horario_ID = horarios.Id_Horario "
                                     + "inner join professores on professores.Id_Professor = professores_horarios.Professor_ID "
-                                    + "where professores.Id_Professor =" + professor.getId() + " order by turmas.ano, turmas.classe, alunos.nome asc";
+                                    + "where professores.Id_Professor =" + professor.getId()
+                                    + " and turmas.ano = " + Year.now().getValue()
+                                    + " order by turmas.ano, turmas.classe, alunos.nome asc";
                                     rs = stmt.executeQuery(sql); // Executar o comando SQL.
                             %>
 

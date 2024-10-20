@@ -4,6 +4,7 @@
     Author     : con_c
 --%>
 
+<%@page import="java.time.Year"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="util.DBUtil"%>
 <%@page import="model.Aluno"%> 
@@ -63,7 +64,8 @@
                                     + "inner join turmas_alunos on turmas_alunos.Turma_ID = turmas.Id_Turma "
                                     + "inner join alunos on alunos.Id_Aluno = turmas_alunos.Aluno_ID "
                                     + "inner join responsaveis on responsaveis.Id_Responsavel = alunos.Responsavel_id "
-                                    + "where alunos.responsavel_id =" + responsavel.getId() + ";";
+                                    + "where alunos.responsavel_id =" + responsavel.getId() 
+                                    + " and turmas.ano = " + Year.now().getValue();
                                     rs = stmt.executeQuery(sql); // Executar o comando SQL.
                             %>
 
