@@ -1,5 +1,5 @@
 <div align="center">
-    Trabalho de Conclusão de Curso apresentado ao Instituto Superior de Educação do Rio de Janeiro - ISERJ/FAETEC como parte dos requisitos para a obtenção do título de Técnico em Informática.
+    <b>Trabalho de Conclusão de Curso apresentado ao Instituto Superior de Educação do Rio de Janeiro - ISERJ/FAETEC como parte dos requisitos para a obtenção do título de Técnico em Informática.</b>
 </div>
 <hr>
 
