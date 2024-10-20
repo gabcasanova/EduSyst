@@ -103,7 +103,15 @@ public class AlunoLoginFilter implements Filter {
             // Se o professor está logado e tentando acessar o login, redirecionar para o ambiente
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/ambiente_prof.jsp");
         } else if (!profLogado && (
-                    path.endsWith("/ambiente_prof.jsp") //|| Lista de páginas bloqueadas.
+                    path.endsWith("/ambiente_prof.jsp") || // Lista de páginas bloqueadas.
+                    path.endsWith("/ambiente_prof_aluno.jsp") ||
+                    path.endsWith("/ambiente_prof_chat.jsp") ||
+                    path.endsWith("/ambiente_prof_config.jsp") ||
+                    path.endsWith("/ambiente_prof_horarios.jsp") ||
+                    path.endsWith("/ambiente_prof_materias.jsp") ||
+                    path.endsWith("/ambiente_prof_notas.jsp") ||
+                    path.endsWith("/ambiente_prof_outros.jsp") ||
+                    path.endsWith("/ambiente_prof_turmas.jsp")
                 )) {
             // Se o professor não está logado e tentando acessar o ambiente, redirecionar para o login
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/login_prof.jsp");
