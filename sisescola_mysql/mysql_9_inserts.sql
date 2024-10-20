@@ -106,6 +106,7 @@ VALUES
 -- Associar cada Professor com seu respectivo Horário (que horário esse professor dará aula) ----------------------------------------------------------------
 INSERT INTO Professores_Horarios (Horario_ID, Professor_ID) VALUES
 (1,  1),                      -- Ex: manhã 07:00, segunda, Prof. Alberto
+(2,  1),                      -- Ex: manhã 07:00, segunda, Prof. Alberto
 (2,  2),                      -- Ex: manhã 08:40, segunda, Prof. Fernanda
 (3,  3),
 (4,  8),
@@ -130,7 +131,7 @@ VALUES
 (9,  9,  1),
 (10, 10, 1),
 
-(1,  7,  2),                 -- Ex: manhã 07:00, segunda, Física,     Turma 1101
+(2,  7,  2),                 -- Ex: manhã 07:00, segunda, Física,     Turma 1101
 (2,  8,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 1101
 (3,  9,  2),
 (4,  1,  2),
@@ -145,9 +146,9 @@ VALUES
 
 
 
-INSERT into notas(Aluno_Id, Professor_ID, Primeira_Etapa, Segunda_Etapa, Terceira_Etapa, Quarta_Etapa) values
-(1, 1, 6, 8, 9, 7),
-(1, 3, 8, 4, 9, 7);
+INSERT into notas(Aluno_Id, Professor_ID, Primeira_Etapa, Segunda_Etapa, Terceira_Etapa, Quarta_Etapa, Nome_Materia) values
+(1, 1, 6, 8, 9, 7, "aaasasas"),
+(1, 3, 8, 4, 9, 7, "ashauhshuas");
 
 INSERT into notas(Aluno_Id, Professor_ID, Primeira_Etapa, Segunda_Etapa, Terceira_Etapa) values
 (1, 1,  1, 8, 9);

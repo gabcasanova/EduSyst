@@ -52,7 +52,7 @@
                                     conn = DBUtil.getConnection(); // Conectar com o banco de dados.
                                     stmt = conn.createStatement(); // Preparar um comando SQL.
 
-                                    String sql =  "select materias.Nome, professores.Nome, turmas.Classe, "
+                                    String sql =  "select distinct notas.Nome_Materia, turmas.Classe, professores.Nome, "
                                                 + "notas.Primeira_Etapa, notas.Segunda_Etapa, notas.Terceira_Etapa, notas.Quarta_Etapa, "
                                                 
                                                 + "IF( "
@@ -96,7 +96,7 @@
                                 <tr>
                                     <th>Matéria</th>
                                     <th>Professor</th>
-                                    <th>Classe</th>
+                                    <th>Turma</th>
                                     <th>1 Bim.</th>
                                     <th>2 Bim.</th>
                                     <th>3 Bim.</th>
@@ -109,7 +109,7 @@
                                     while (rs.next()) {
                                 %>
                                         <tr>
-                                            <td><%= rs.getString("materias.Nome") %></td>
+                                            <td><%= rs.getString("notas.Nome_Materia") %></td>
                                             <td><%= rs.getString("professores.Nome") %></td>
                                             <td><%= rs.getString("turmas.classe") %></td>
                                             <td><%= rs.getString("notas.Primeira_Etapa") %></td>
