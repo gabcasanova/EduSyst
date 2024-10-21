@@ -157,7 +157,9 @@ CREATE TABLE Notas (
     Terceira_Etapa decimal DEFAULT null,
     Quarta_Etapa decimal DEFAULT null,
     
-    Nome_Materia VARCHAR(255) DEFAULT NULL
+    Nome_Materia VARCHAR(255) DEFAULT NULL,
+    
+    unique(Aluno_ID, Professor_ID, Nome_Materia)
 );
 
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------
