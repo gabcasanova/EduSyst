@@ -138,18 +138,22 @@
                         <div class="row p-3">
                             <h3 class="mb-4 text-center">Lançar (ou editar) uma Nota:</h3>
                             <p class="text-center">Selecione a turma, o aluno e a matéria para o lançamento da nota. Se algum bimestre for deixado em branco, a nota anterior, se disponível no sistema, será mantida.</p>
-                            <form class="text-center">
+                            
+                            <form class="text-center" action="LancarNota" method="get">
+                                <!-- Enviar ID do professor -->
+                                <input type="hidden" name="professorId" value="<%= professor.getId() %>">      
+                                
                                 <div class="row mb-3">
                                     <div class="col-3"> <!-- TURMA -->
                                         <label class="form-label" for="cars">Turma:</label>
-                                        <select class="form-select" name="turma" id="turma">
+                                        <select class="form-select" name="turma" id="turma" required>
                                             <option value="" selected disabled hidden>Escolha uma turma</option>
                                         </select>
                                     </div>
                                     
                                     <div class="col"> <!-- ALUNO -->
                                         <label class="form-label" for="cars">Aluno:</label>
-                                        <select class="form-select" name="aluno" id="aluno" disabled>
+                                        <select class="form-select" name="aluno" id="aluno" required disabled>
                                             <option value="" selected disabled hidden>Escolha um aluno</option>
                                         </select>
                                     </div>
@@ -158,7 +162,7 @@
                                 <div class="row">
                                     <div class="col-3"> <!-- TURMA -->
                                         <label class="form-label" for="cars">Matéria:</label>
-                                        <select class="form-select" name="materia" id="materia" disabled>
+                                        <select class="form-select" name="materia" id="materia" required disabled>
                                             <option value="" selected disabled hidden>Escolha uma matéria</option>
                                         </select>
                                     </div>
