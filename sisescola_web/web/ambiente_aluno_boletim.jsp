@@ -75,7 +75,7 @@
                                                         + "TRUNCATE(("
                                                             + "notas.Primeira_Etapa + notas.Segunda_Etapa + "
                                                             + "notas.Terceira_Etapa + notas.Quarta_Etapa"
-                                                        + ") / 4, 1) >= 6, 'Aprovado', 'Reprovado'"
+                                                        + ") / 4, 1) >= 5.6, 'Aprovado', 'Reprovado'"
                                                     + "), 'Indisponível'"
                                                 + ") as `situacao` "
                                                 
