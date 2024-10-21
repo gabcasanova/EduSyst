@@ -78,7 +78,7 @@
                                         + "IF( "
                                             + "TRUNCATE( ("
                                                 + "notas.Primeira_Etapa + notas.Segunda_Etapa + notas.Terceira_Etapa + notas.Quarta_Etapa"
-                                            + ") / 4, 1) >= 6, 'Aprovado', 'Reprovado'), "
+                                            + ") / 4, 1) >= 5.6, 'Aprovado', 'Reprovado'), "
                                         + "'Indisponível') AS situacao from alunos "
                                         + "inner join turmas_alunos on turmas_alunos.aluno_id = alunos.id_aluno "
                                         + "inner join turmas on turmas.id_turma = turmas_alunos.turma_id "
@@ -169,21 +169,20 @@
                                     
                                     <div class="col"> <!-- 1o Bim. -->
                                         <label class="form-label" for="cars">1º Bimestre:</label>
-                                        <input class="form-control" type="number" id="primeira_etapa" name="primeira_etapa" min="0" max="10" disabled>
+                                        <input class="form-control" type="number" step="0.1" id="primeira_etapa" name="primeira_etapa" min="0" max="10" disabled>
                                     </div>
                                     <div class="col"> <!-- 2o Bim. -->
                                         <label class="form-label" for="cars">2º Bimestre:</label>
-                                        <input class="form-control" type="number" id="segunda_etapa" name="segunda_etapa" min="0" max="10" disabled>
+                                        <input class="form-control" type="number" step="0.1" id="segunda_etapa" name="segunda_etapa" min="0" max="10" disabled>
                                     </div>
                                     <div class="col"> <!-- 1o Bim. -->
                                         <label class="form-label" for="cars">3º Bimestre:</label>
-                                        <input class="form-control" type="number" id="terceira_etapa" name="terceira_etapa" min="0" max="10" disabled>
+                                        <input class="form-control" type="number" step="0.1" id="terceira_etapa" name="terceira_etapa" min="0" max="10" disabled>
                                     </div>
                                     <div class="col"> <!-- 2o Bim. -->
                                         <label class="form-label" for="cars">4º Bimestre:</label>
-                                        <input class="form-control" type="number" id="quarta_etapa" name="quarta_etapa" min="0" max="10" disabled>
+                                        <input class="form-control" type="number" step="0.1" id="quarta_etapa" name="quarta_etapa" min="0" max="10" disabled>
                                     </div>
-                                    
                                 </div>
                                 
                                 <br><br>
