@@ -141,14 +141,3 @@ VALUES
 (8,  4,  2),
 (9,  5,  2),
 (10, 6,  2);
-
-
-
-
-
-INSERT into notas(Aluno_Id, Professor_ID, Primeira_Etapa, Segunda_Etapa, Terceira_Etapa, Quarta_Etapa, Nome_Materia) values
-(1, 1, 6, 8, 9, 7, "aaasasas"),
-(1, 3, 8, 4, 9, 7, "ashauhshuas");
-
-INSERT into notas(Aluno_Id, Professor_ID, Primeira_Etapa, Segunda_Etapa, Terceira_Etapa) values
-(1, 1,  1, 8, 9);

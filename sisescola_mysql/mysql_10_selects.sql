@@ -161,7 +161,6 @@ WHERE alunos.Id_Aluno = 1;
 
 
 
-
 -- obter materias de um professor
 select distinct materias.nome from professores 
 INNER JOIN professores_horarios ON professores.Id_Professor = professores_horarios.Professor_ID
@@ -210,3 +209,47 @@ inner join professores on professores.Id_Professor = professores_horarios.Profes
 where professores.Id_Professor = 1 order by turmas.ano, turmas.classe, materias.nome asc
 ;
 
+
+select distinct
+	professores.nome, notas.nome_materia, alunos.nome, turmas.classe, notas.primeira_etapa, notas.segunda_etapa, 
+	notas.terceira_etapa, notas.quarta_etapa,
+    
+	-- Verifica se todas as etapas são diferentes de NULL para calcular a média
+    IF( notas.Primeira_Etapa IS NOT NULL 
+        AND notas.Segunda_Etapa IS NOT NULL 
+        AND notas.Terceira_Etapa IS NOT NULL 
+        AND notas.Quarta_Etapa IS NOT NULL, 
+        -- Se todas forem diferentes de NULL, calcula a média truncada
+        TRUNCATE( (notas.Primeira_Etapa + notas.Segunda_Etapa + notas.Terceira_Etapa + notas.Quarta_Etapa) / 4, 1), 
+        -- Caso contrário, retorna "indisponível"
+        'Indisponível') AS media,
+
+    -- Verifica se todas as etapas são diferentes de NULL para determinar a situação
+    IF( notas.Primeira_Etapa IS NOT NULL 
+        AND notas.Segunda_Etapa IS NOT NULL 
+        AND notas.Terceira_Etapa IS NOT NULL 
+        AND notas.Quarta_Etapa IS NOT NULL, 
+        -- Se todas forem diferentes de NULL, verifica se a média é >= 6 para definir a situação
+        IF( TRUNCATE( (notas.Primeira_Etapa + notas.Segunda_Etapa + notas.Terceira_Etapa + notas.Quarta_Etapa) / 4, 1) >= 6, 
+            'Aprovado', 
+            'Reprovado'), 
+        -- Caso qualquer etapa seja NULL, retorna "indisponível" para a situação
+        'Indisponível') AS situacao
+        
+from alunos
+inner join turmas_alunos on turmas_alunos.aluno_id = alunos.id_aluno
+inner join turmas on turmas.id_turma = turmas_alunos.turma_id
+inner join notas on alunos.id_aluno = notas.aluno_id
+inner join professores on professores.id_professor = notas.professor_id
+where turmas.ano = 2023 and
+professores.id_professor = 1 order by notas.nome_materia, alunos.nome asc;
+
+select distinct materias.nome from professores
+inner join professores_horarios on professores_horarios.professor_id = professores.id_professor
+inner join horarios on horarios.id_horario = professores_horarios.horario_id
+inner join horarios_materias on horarios_materias.horario_id = horarios.id_horario
+inner join materias on materias.id_materia = horarios_materias.materia_id
+inner join turmas on turmas.id_turma = horarios_materias.turma_id
+where turmas.ano = 2024 and
+professores.id_professor = 1
+;
