@@ -76,7 +76,7 @@
                                     <th>Responsável</th>
                                     <th>Email</th>
                                     <th>Turma</th>
-                                    <th>Ano</th>
+                                    <!--<th>Ano</th>-->
                                 </tr>
                                 <%
                                     // Inserir informações do banco de dados.
@@ -88,7 +88,7 @@
                                             <td><%= rs.getString("responsaveis.nome") %></td>
                                             <td><%= rs.getString("responsaveis.email") %></td>
                                             <td><%= rs.getString("turmas.classe") %></td>
-                                            <td><%= rs.getString("turmas.ano") %></td>
+                                                
                                         </tr>
                                 <%
                                         }
