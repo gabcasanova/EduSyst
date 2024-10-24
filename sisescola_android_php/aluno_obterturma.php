@@ -3,7 +3,7 @@
 
     $id_aluno = $_GET["id_aluno"];
 
-    $sql = "select * from alunos inner join turmas on turmas.Id_Turma = alunos.Turma_ID WHERE Id_Aluno='$id_aluno'";
+    $sql = "select * from turmas inner join turmas_alunos on turmas_alunos.turma_id = turmas.id_turma inner join alunos on alunos.id_aluno = turmas_alunos.aluno_id where alunos.id_aluno='$id_aluno'";
     $result = mysqli_query($con, $sql);
 
     $data = array(); // Initialize data array

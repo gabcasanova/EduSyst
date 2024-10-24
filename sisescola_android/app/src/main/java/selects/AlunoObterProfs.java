@@ -63,7 +63,7 @@ public class AlunoObterProfs extends AsyncTask<Integer, Void, String> {
             TableRow headerRow = new TableRow(context);
             headerRow.setBackgroundColor(Color.parseColor("#023047"));
 
-            String[] headers = {"Nome", "Email", "Matéria"};
+            String[] headers = {"Nome", "Email"};
 
             for (String header : headers) {
                 TextView headerView = new TextView(context);
@@ -93,11 +93,11 @@ public class AlunoObterProfs extends AsyncTask<Integer, Void, String> {
                 emailView.setPadding(padding, padding, padding, padding); // Add padding to email
                 row.addView(emailView);
 
-                TextView materiaView = new TextView(context);
+                /*TextView materiaView = new TextView(context);
                 materiaView.setText(jsonObject.getString("materia_nome"));
                 materiaView.setTextSize(text_size); // Set font size for materia
                 materiaView.setPadding(padding, padding, padding, padding); // Add padding to materia
-                row.addView(materiaView);
+                row.addView(materiaView);*/
 
                 tableLayout.addView(row);
             }
