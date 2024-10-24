@@ -13,11 +13,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import selects.AlunoObterInfo;
-import selects.AlunoObterNome;
-import selects.AlunoObterTurma;
+import selects_alunos.AlunoObterInfo;
+import selects_alunos.AlunoObterNome;
+import selects_alunos.AlunoObterTurma;
 
-public class ambienteAlunoPrincipal extends AppCompatActivity {
+public class AmbienteAlunoPrincipal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class ambienteAlunoPrincipal extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i = new Intent(ambienteAlunoPrincipal.this, MainActivity.class);
+                        Intent i = new Intent(AmbienteAlunoPrincipal.this, MainActivity.class);
                         startActivity(i);
                     }
                 }
@@ -64,7 +64,7 @@ public class ambienteAlunoPrincipal extends AppCompatActivity {
         bt_alunoProfs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ambienteAlunoPrincipal.this, ambienteAlunoProf.class);
+                Intent i = new Intent(AmbienteAlunoPrincipal.this, AmbienteAlunoProf.class);
                 i.putExtra("id_aluno", idAlunoStr);
                 startActivity(i);
             }
@@ -74,7 +74,17 @@ public class ambienteAlunoPrincipal extends AppCompatActivity {
         bt_alunoMaterias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ambienteAlunoPrincipal.this, ambienteAlunoMaterias.class);
+                Intent i = new Intent(AmbienteAlunoPrincipal.this, AmbienteAlunoMaterias.class);
+                i.putExtra("id_aluno", idAlunoStr);
+                startActivity(i);
+            }
+        });
+
+        Button bt_alunoHorarios = findViewById(R.id.bt_alunoHorarios); // BOTÃO HORÁRIOS.
+        bt_alunoHorarios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AmbienteAlunoPrincipal.this, AmbienteAlunoHorarios.class);
                 i.putExtra("id_aluno", idAlunoStr);
                 startActivity(i);
             }

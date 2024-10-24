@@ -1,4 +1,4 @@
-package selects;
+package selects_alunos;
 
 import android.os.AsyncTask;
 import android.widget.TextView;
@@ -10,11 +10,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class AlunoObterNome extends AsyncTask<Integer, Void, String> {
+public class AlunoObterTurma extends AsyncTask<Integer, Void, String> {
 
     private TextView tv_alunoNome;
 
-    public AlunoObterNome(TextView tv_alunoInfo) {
+    public AlunoObterTurma(TextView tv_alunoInfo) {
         this.tv_alunoNome = tv_alunoInfo;
     }
 
@@ -23,7 +23,7 @@ public class AlunoObterNome extends AsyncTask<Integer, Void, String> {
         int idAluno = params[0];
         StringBuilder result = new StringBuilder();
         try {
-            URL url = new URL("http://10.0.2.2/sisescola_web_android/aluno_obternome.php?id_aluno=" + idAluno);
+            URL url = new URL("http://10.0.2.2/sisescola_web_android/aluno_obterturma.php?id_aluno=" + idAluno);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
@@ -44,9 +44,10 @@ public class AlunoObterNome extends AsyncTask<Integer, Void, String> {
         try {
             // Parse result as JSON object
             JSONObject jsonObject = new JSONObject(result);
-            String nome = jsonObject.getString("nome"); // Extract 'Nome' from JSON
+            String classe = jsonObject.getString("classe");
+            String etapa = jsonObject.getString("etapa");
 
-            tv_alunoNome.setText(nome);
+            tv_alunoNome.setText("Turma: " + classe + "\n" + "Etapa: " + etapa);
         } catch (Exception e) {
             e.printStackTrace();
             tv_alunoNome.setText("Erro interpretando informações.");

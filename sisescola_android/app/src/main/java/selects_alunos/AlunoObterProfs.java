@@ -1,4 +1,4 @@
-package selects;
+package selects_alunos;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -6,8 +6,6 @@ import android.os.AsyncTask;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-import com.edusyst.edusyst.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

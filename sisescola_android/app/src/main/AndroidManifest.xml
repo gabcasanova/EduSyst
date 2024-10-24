@@ -16,19 +16,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ambienteAlunoMaterias"
+            android:name=".AmbienteAlunoHorarios"
             android:exported="false" />
         <activity
-            android:name=".ambienteAlunoProf"
+            android:name=".AmbienteAlunoMaterias"
             android:exported="false" />
         <activity
-            android:name=".ambienteAlunoPrincipal"
+            android:name=".AmbienteAlunoProf"
             android:exported="false" />
         <activity
-            android:name=".loginAluno"
+            android:name=".AmbienteAlunoPrincipal"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".LoginAluno"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -14,10 +14,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import selects.AlunoObterMat;
-import selects.AlunoObterProfs;
+import selects_alunos.AlunoObterMat;
 
-public class ambienteAlunoMaterias extends AppCompatActivity {
+public class AmbienteAlunoMaterias extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

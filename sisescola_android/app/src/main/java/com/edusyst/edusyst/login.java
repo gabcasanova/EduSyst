@@ -15,7 +15,7 @@ import androidx.core.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 
-public class login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class login extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i = new Intent(login.this, loginAluno.class);
+                        Intent i = new Intent(Login.this, LoginAluno.class);
                         startActivity(i);
                     }
                 }

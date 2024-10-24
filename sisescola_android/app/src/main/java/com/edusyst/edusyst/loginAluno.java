@@ -29,7 +29,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class loginAluno extends AppCompatActivity {
+public class LoginAluno extends AppCompatActivity {
 
     private EditText etCpfAluno, etEmailAluno, etSenhaAluno;
     private Button btEntrarAluno;
@@ -145,22 +145,22 @@ public class loginAluno extends AppCompatActivity {
                 String status = jsonObject.getString("status");
                 if ("success".equals(status)) {
                     String nome = jsonObject.getString("nome");
-                    Toast.makeText(loginAluno.this, "Usuário encontrado: " + nome, Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginAluno.this, "Usuário encontrado: " + nome, Toast.LENGTH_LONG).show();
 
                     // Enviar ID do aluno para próxima atividade.
                     String id_aluno = jsonObject.getString("id_aluno");
-                    Intent i = new Intent(loginAluno.this, ambienteAlunoPrincipal.class);
+                    Intent i = new Intent(LoginAluno.this, AmbienteAlunoPrincipal.class);
                     i.putExtra("id_aluno", id_aluno);
 
                     // Mudar de atividade.
                     startActivity(i);
                 } else {
                     String message = jsonObject.getString("message");
-                    Toast.makeText(loginAluno.this, message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginAluno.this, message, Toast.LENGTH_LONG).show();
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
-                Toast.makeText(loginAluno.this, "Erro ao processar resposta do servidor", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginAluno.this, "Erro ao processar resposta do servidor", Toast.LENGTH_LONG).show();
             }
         }
     }
