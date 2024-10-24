@@ -3,8 +3,8 @@ use edusyst;
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Seleções simples -----------------------------------------------------------------------------------------------------------------------------------------
-select * from administradores; -- Obter usuários
-select * from responsaveis;      
+select * from Administradores; -- Obter usuários
+select * from Responsaveis;      
 select * from alunos;           
 select * from professores;   
 
@@ -12,9 +12,9 @@ select * from materias;        -- Obter informações
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Obter responsáveis dos alunos ----------------------------------------------------------------------------------------------------------------------------
-select responsaveis.Nome as "Responsável", alunos.Nome as "Aluno" from responsaveis
-inner join alunos
-on alunos.Responsavel_ID = responsaveis.Id_Responsavel;
+select Responsaveis.Nome as "Responsável", Alunos.Nome as "Aluno" from Responsaveis
+inner join Alunos
+on Alunos.Responsavel_ID = Responsaveis.Id_Responsavel;
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Obter alunos de uma turma específica (Ex: Obter alunos da turma 901) -------------------------------------------------------------------------------------
@@ -182,32 +182,39 @@ select professores.nome, professores.email from professores order by professores
 
 
 -- obter alunos de um professor
-select alunos.nome, alunos.email, responsaveis.nome, responsaveis.email, turmas.classe, turmas.ano from alunos
-inner join responsaveis on responsaveis.Id_Responsavel = alunos.Responsavel_ID
-inner join turmas_alunos on turmas_alunos.Aluno_ID = alunos.Id_Aluno
-inner join turmas on turmas.Id_Turma = turmas_alunos.Turma_ID
 
+SELECT DISTINCT Alunos.Nome, Alunos.Email, Responsaveis.Nome, Responsaveis.Email, Turmas.Classe, Turmas.Ano 
+FROM Alunos
+INNER JOIN Responsaveis ON Responsaveis.Id_Responsavel = Alunos.Responsavel_ID
+INNER JOIN Turmas_Alunos ON Turmas_Alunos.Aluno_ID = Alunos.Id_Aluno
+INNER JOIN Turmas ON Turmas.Id_Turma = Turmas_Alunos.Turma_ID
+INNER JOIN Horarios_Materias ON Horarios_Materias.Turma_ID = Turmas.Id_Turma
+INNER JOIN Horarios ON Horarios.Id_Horario = Horarios_Materias.Horario_ID
+INNER JOIN Professores_Horarios ON Professores_Horarios.Horario_ID = Horarios.Id_Horario
+INNER JOIN Professores ON Professores.Id_Professor = Professores_Horarios.Professor_ID
+WHERE Professores.Id_Professor = 1
+ORDER BY Turmas.Classe, Alunos.Nome ASC;
+
+
+-- obter atividades de um prof
+select * from atividades;
+
+select distinct atividades.Nome_Atividade, materias.nome, professores.nome, professores.Id_Professor
+ 
+from Alunos
+inner join Turmas_alunos on Turmas_Alunos.Aluno_ID = alunos.Id_Aluno
+
+inner join Turmas on turmas.Id_Turma = turmas_alunos.Turma_ID
 inner join Horarios_Materias on Horarios_Materias.Turma_ID = turmas.Id_Turma
-inner join horarios on horarios.Id_Horario = horarios_materias.Horario_ID
-inner join professores_horarios on professores_horarios.Horario_ID = horarios.Id_Horario
-inner join professores on professores.Id_Professor = professores_horarios.Professor_ID
-where professores.Id_Professor = 1 order by turmas.classe, alunos.nome asc
-;
+inner join Materias on Horarios_Materias.Materia_ID = materias.Id_Materia
+inner join Horarios on Horarios.Id_Horario = horarios_materias.Horario_ID
 
--- obter turmas de um prof
-select distinct materias.nome, turmas.classe, turmas.ano from alunos
-inner join turmas_alunos on turmas_alunos.Aluno_ID = alunos.Id_Aluno
-inner join turmas on turmas.Id_Turma = turmas_alunos.Turma_ID
+inner join atividades on atividades.Turma_ID = turmas.Id_Turma
 
-inner join Horarios_Materias on Horarios_Materias.Turma_ID = turmas.Id_Turma
+inner join Professores_Horarios on professores_horarios.Horario_ID = horarios.Id_Horario
+inner join Professores on Professores.Id_Professor = professores_horarios.Professor_ID
 
-inner join materias on horarios_materias.Materia_ID = materias.Id_Materia
-
-inner join horarios on horarios.Id_Horario = horarios_materias.Horario_ID
-inner join professores_horarios on professores_horarios.Horario_ID = horarios.Id_Horario
-inner join professores on professores.Id_Professor = professores_horarios.Professor_ID
-where professores.Id_Professor = 1 order by turmas.ano, turmas.classe, materias.nome asc
-;
+where atividades.Nome_Materia = Materias.nome;
 
 
 select distinct

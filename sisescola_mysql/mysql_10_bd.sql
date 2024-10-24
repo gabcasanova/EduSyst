@@ -44,6 +44,7 @@ CREATE TABLE Alunos (
     Telefone CHAR(13) NOT NULL,
     Genero VARCHAR(255) NOT NULL,
     Responsavel_ID INT(10) NOT NULL,
+    Ano_Matricula INT(4),
     PRIMARY KEY (Id_Aluno),
     CONSTRAINT FK_Aluno_Responsavel FOREIGN KEY (Responsavel_ID)
         REFERENCES Responsaveis (Id_Responsavel)
@@ -85,6 +86,7 @@ CREATE TABLE Professores (
     Endereco VARCHAR(255) NOT NULL,
     Telefone CHAR(13) NOT NULL,
     Genero VARCHAR(255) NOT NULL,
+    Ano_Matricula INT(4),
     PRIMARY KEY (Id_Professor)
 );
 
@@ -157,10 +159,29 @@ CREATE TABLE Notas (
     Terceira_Etapa decimal DEFAULT null,
     Quarta_Etapa decimal DEFAULT null,
     
-    Nome_Materia VARCHAR(255) DEFAULT NULL,
-    Ano INT(4) DEFAULT null,
+    Nome_Materia VARCHAR(255) NOT NULL,
+    Ano INT(4) NOT NULL,
     
     unique(Aluno_ID, Professor_ID, Nome_Materia, Ano)
+);
+
+-- Criação da tabela Atividades
+CREATE TABLE Atividades (
+    Id_Atividades INT(10) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id_Atividades),
+    
+    Nome_Atividade VARCHAR(255) NOT NULL,
+    Texto_Atividade VARCHAR(5000) NOT NULL,
+    Link_Atividade VARCHAR(255) NOT NULL,
+    Etapa INT(10) NOT NULL,
+    Ano INT(4) NOT NULL,
+    
+    Turma_ID INT(10) NOT NULL,
+    CONSTRAINT FK_Atividades_Turmas FOREIGN KEY (Turma_ID)
+        REFERENCES Turmas(Id_Turma)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    
+    Nome_Materia VARCHAR(255) NOT NULL
 );
 
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------
