@@ -69,5 +69,15 @@ public class ambienteAlunoPrincipal extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button bt_alunoMaterias = findViewById(R.id.bt_alunoMaterias); // BOTÃO MATÉRIAS.
+        bt_alunoMaterias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ambienteAlunoPrincipal.this, ambienteAlunoMaterias.class);
+                i.putExtra("id_aluno", idAlunoStr);
+                startActivity(i);
+            }
+        });
     }
 }
