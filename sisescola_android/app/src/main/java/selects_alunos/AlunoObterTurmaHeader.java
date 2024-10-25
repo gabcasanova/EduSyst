@@ -47,7 +47,8 @@ public class AlunoObterTurmaHeader extends AsyncTask<Integer, Void, String> {
             String classe = jsonObject.getString("classe");
             String etapa = jsonObject.getString("etapa");
 
-            tv_alunoNome.setText("Turma: " + classe + "\n" + "Etapa: " + etapa);
+            //tv_alunoNome.setText("Turma: " + classe + "\n" + "Etapa: " + etapa);
+            tv_alunoNome.setText("Turma: " + classe + "\n" + etapa);
         } catch (Exception e) {
             e.printStackTrace();
             tv_alunoNome.setText("Erro interpretando informações.");
