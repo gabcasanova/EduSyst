@@ -99,5 +99,15 @@ public class AmbienteAlunoPrincipal extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button bt_alunoBoletim = findViewById(R.id.bt_alunoBoletim); // BOTÃO BOLETIM.
+        bt_alunoBoletim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AmbienteAlunoPrincipal.this, AmbienteAlunoBoletim.class);
+                i.putExtra("id_aluno", idAlunoStr);
+                startActivity(i);
+            }
+        });
     }
 }
