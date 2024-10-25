@@ -13,7 +13,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Minha Turma"
+        app:title="Meu Boletim"
         app:titleTextColor="@android:color/white" />
 
     <TableLayout
