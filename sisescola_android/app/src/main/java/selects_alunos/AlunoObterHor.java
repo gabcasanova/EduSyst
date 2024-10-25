@@ -102,8 +102,8 @@ public class AlunoObterHor extends AsyncTask<Integer, Void, String> {
 
                 TextView fimView = new TextView(context);
                     String fimViewFull = jsonObject.getString("fim"); // Cortar texto
-                    String fimViewTxt = inicioViewFull.substring(0, 5);
-                fimView.setText(fimViewTxt);
+                    String fimViewTxt = fimViewFull.substring(0, 5);
+                fimView.setText(fimViewFull);
                 fimView.setTextSize(text_size); // Set font size for name
                 fimView.setPadding(padding, padding, padding, padding); // Add padding to name
                 row.addView(fimView);
