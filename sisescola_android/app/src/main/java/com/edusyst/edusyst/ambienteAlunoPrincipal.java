@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import selects_alunos.AlunoObterInfo;
 import selects_alunos.AlunoObterNome;
-import selects_alunos.AlunoObterTurma;
+import selects_alunos.AlunoObterTurmaHeader;
 
 public class AmbienteAlunoPrincipal extends AppCompatActivity {
     @Override
@@ -54,7 +54,7 @@ public class AmbienteAlunoPrincipal extends AppCompatActivity {
         new AlunoObterNome(tv_alunoNome).execute(idAluno);
 
         TextView tv_alunoInfoTurma = findViewById(R.id.tv_alunoInfoTurma);
-        new AlunoObterTurma(tv_alunoInfoTurma).execute(idAluno);
+        new AlunoObterTurmaHeader(tv_alunoInfoTurma).execute(idAluno);
 
         TextView tv_alunoInfo = findViewById(R.id.tv_alunoInfo);
         new AlunoObterInfo(tv_alunoInfo).execute(idAluno);
@@ -85,6 +85,16 @@ public class AmbienteAlunoPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(AmbienteAlunoPrincipal.this, AmbienteAlunoHorarios.class);
+                i.putExtra("id_aluno", idAlunoStr);
+                startActivity(i);
+            }
+        });
+
+        Button bt_alunoTurma = findViewById(R.id.bt_alunoTurma); // BOTÃO TURMA.
+        bt_alunoTurma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AmbienteAlunoPrincipal.this, AmbienteAlunoTurma.class);
                 i.putExtra("id_aluno", idAlunoStr);
                 startActivity(i);
             }
