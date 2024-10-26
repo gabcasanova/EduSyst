@@ -148,10 +148,10 @@ public class LoginProfessor extends AppCompatActivity {
                     String nome = jsonObject.getString("nome");
                     Toast.makeText(LoginProfessor.this, "Usuário encontrado: " + nome, Toast.LENGTH_LONG).show();
 
-                    // Enviar ID do aluno para próxima atividade.
-                    String id_aluno = jsonObject.getString("id_professor");
+                    // Enviar ID do professor para próxima atividade.
+                    String id_professor = jsonObject.getString("id_professor");
                     Intent i = new Intent(LoginProfessor.this, AmbienteProfPrincipal.class);
-                    i.putExtra("id_aluno", id_aluno);
+                    i.putExtra("id_professor", id_professor);
 
                     // Mudar de atividade.
                     startActivity(i);
