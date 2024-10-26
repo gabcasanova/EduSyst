@@ -9,3 +9,4 @@ sisescola_web/.idea
 **/nbproject/private/
 sisescola_web/build
 
+*.lock
