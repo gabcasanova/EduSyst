@@ -53,6 +53,18 @@ public class Login extends AppCompatActivity {
                     }
                 }
         );
+
+        // Botão aluno.
+        Button bt_loginProf = findViewById(R.id.bt_loginProf);
+        bt_loginProf.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(Login.this, LoginProfessor.class);
+                        startActivity(i);
+                    }
+                }
+        );
     }
 
     @Override
