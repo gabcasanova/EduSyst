@@ -34,7 +34,7 @@ public class AmbienteAlunoPrincipal extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         // Botão Sair.
-        Button bt_deslogar = findViewById(R.id.bt_deslogar);
+        Button bt_deslogar = findViewById(R.id.bt_deslogarAluno);
         bt_deslogar.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
