@@ -55,5 +55,16 @@ public class AmbienteProfPrincipal extends AppCompatActivity {
 
         TextView tv_profInfo = findViewById(R.id.tv_profInfo);
         new ProfObterInfo(tv_profInfo).execute(idProf);
+
+        // Botões.
+        Button bt_profAlunos = findViewById(R.id.bt_profAlunos); // BOTÃO ALUNOS.
+        bt_profAlunos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AmbienteProfPrincipal.this, AmbienteProfAlunos.class);
+                i.putExtra("id_professor", idProfStr);
+                startActivity(i);
+            }
+        });
     }
 }

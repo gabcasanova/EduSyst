@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AmbienteProfNotas"
+            android:exported="false" />
+        <activity
+            android:name=".AmbienteProfAlunos"
+            android:exported="false" />
+        <activity
             android:name=".AmbienteRespPrincipal"
             android:exported="false" />
         <activity
