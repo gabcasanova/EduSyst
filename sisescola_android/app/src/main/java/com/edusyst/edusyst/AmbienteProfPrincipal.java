@@ -66,5 +66,15 @@ public class AmbienteProfPrincipal extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button bt_profNotas = findViewById(R.id.bt_profNotas); // BOTÃO NOTAS.
+        bt_profNotas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AmbienteProfPrincipal.this, AmbienteProfNotas.class);
+                i.putExtra("id_professor", idProfStr);
+                startActivity(i);
+            }
+        });
     }
 }
