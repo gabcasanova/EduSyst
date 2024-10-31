@@ -187,3 +187,89 @@ CREATE TABLE Atividades (
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- TABELAS MORTAS PARTICIONADAS
+
+-- Tabela Morta Responsáveis 
+CREATE TABLE TM_Responsaveis (
+    Id_Responsavel INT(10) NOT NULL AUTO_INCREMENT,
+    CPF CHAR(11) NOT NULL,
+    Nome VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Senha VARCHAR(255) NOT NULL DEFAULT '1234',
+    Data_Nasc DATE NOT NULL,
+    Endereco VARCHAR(255) NOT NULL,
+    Telefone CHAR(13) NOT NULL,
+    Genero VARCHAR(255) NOT NULL,
+    PRIMARY KEY(Id_Responsavel)
+)
+PARTITION BY KEY()
+PARTITIONS 5;
+	
+-- Backup da tabela Responsáveis
+DELIMITER //
+CREATE TRIGGER BackupResponsaveis
+AFTER INSERT ON Responsaveis
+FOR EACH ROW
+BEGIN
+    INSERT INTO TM_Responsaveis (CPF, Nome, Email, Senha, Data_Nasc, Endereco, Telefone, Genero)
+    VALUES (NEW.CPF, NEW.Nome, NEW.Email, NEW.Senha, NEW.Data_Nasc, NEW.Endereco, NEW.Telefone, NEW.Genero);
+END //
+DELIMITER ;
+
+-- Tabela Morta Alunos 
+CREATE TABLE TM_Alunos (
+    Id_Aluno INT(10) NOT NULL AUTO_INCREMENT,
+    CPF CHAR(11) NOT NULL,
+    Nome VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Senha VARCHAR(255) NOT NULL DEFAULT '1234',
+    Data_Nasc DATE NOT NULL,
+    Endereco VARCHAR(255) NOT NULL,
+    Telefone CHAR(13) NOT NULL,
+    Genero VARCHAR(255) NOT NULL,
+    Responsavel_ID INT(10) NOT NULL,
+    Ano_Matricula INT(4),
+    PRIMARY KEY (Id_Aluno)
+)
+PARTITION BY KEY()
+PARTITIONS 5;
+
+-- Backup da tabela Alunos
+DELIMITER //
+CREATE TRIGGER BackupAlunos
+AFTER INSERT ON Alunos
+FOR EACH ROW
+BEGIN
+    INSERT INTO TM_Alunos (CPF, Nome, Email, Senha, Data_Nasc, Endereco, Telefone, Genero, Responsavel_ID, Ano_Matricula)
+    VALUES (NEW.CPF, NEW.Nome, NEW.Email, NEW.Senha, NEW.Data_Nasc, NEW.Endereco, NEW.Telefone, NEW.Genero, NEW.Responsavel_ID, NEW.Ano_Matricula);
+END //
+DELIMITER ;
+
+-- Tabela Morta Professores
+CREATE TABLE TM_Professores (
+    Id_Professor INT(10) NOT NULL AUTO_INCREMENT,
+    CPF CHAR(11) NOT NULL,
+    Nome VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Senha VARCHAR(255) NOT NULL DEFAULT '1234',
+    Data_Nasc DATE NOT NULL,
+    Endereco VARCHAR(255) NOT NULL,
+    Telefone CHAR(13) NOT NULL,
+    Genero VARCHAR(255) NOT NULL,
+    Ano_Matricula INT(4),
+    PRIMARY KEY (Id_Professor)
+)
+PARTITION BY KEY()
+PARTITIONS 5;
+
+-- Backup da tabela Professores
+DELIMITER //
+CREATE TRIGGER BackupProfessores
+AFTER INSERT ON Professores
+FOR EACH ROW
+BEGIN
+    INSERT INTO TM_Professores (CPF, Nome, Email, Senha, Data_Nasc, Endereco, Telefone, Genero, Ano_Matricula)
+    VALUES (NEW.CPF, NEW.Nome, NEW.Email, NEW.Senha, NEW.Data_Nasc, NEW.Endereco, NEW.Telefone, NEW.Genero, NEW.Ano_Matricula);
+END //
+DELIMITER ;
+
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------
