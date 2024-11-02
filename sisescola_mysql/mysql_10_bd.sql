@@ -104,6 +104,7 @@ CREATE TABLE Horarios (
     Inicio TIME NOT NULL,
     Fim TIME NOT NULL,
     Dia_Semana VARCHAR(255) NOT NULL,
+    Ano INT(4) NOT NULL,
     PRIMARY KEY (Id_Horario)
 );
 

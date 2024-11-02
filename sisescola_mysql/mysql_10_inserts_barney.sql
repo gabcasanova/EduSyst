@@ -217,6 +217,7 @@ VALUES
 ('98', '26445678902', 'Patrícia Almeida', 'patricia.almeida@escola.com', 'aluno1097', '2010-04-18', 'Rua do Amanhã, 90', '11901234655', 'Feminino', 98),
 ('99', '34956789013', 'Vinícius Ferreira', 'vinicius.ferreira@escola.com', 'aluno1098', '2011-09-22', 'Rua do Vento, 23', '11901234656', 'Masculino', 99),
 ('100', '42667890124', 'Fernanda Costa', 'fernanda.costa@escola.com', 'aluno1099', '2012-08-04', 'Rua da Compreensão, 12', '11901234657', 'Feminino', 100);
+
 -- Inserindo dados na tabela Turmas -------------------------------------------------------------------------------------------------------------------------
 INSERT INTO Turmas (Id_Turma, Ano, Classe, Etapa)
 VALUES 
@@ -225,8 +226,6 @@ VALUES
 (3, 2024, 1101, 'Ensino Médio'),
 (4, 2024, 1201, 'Ensino Médio'),
 (5, 2024, 1301, 'Ensino Médio');
-
-
 
 -- ENTURMAÇÃO (Definir qual aluno participa de qual turma) --------------------------------------------------------------------------------------------------
 INSERT INTO Turmas_Alunos (Turma_ID, Aluno_ID)
@@ -412,39 +411,40 @@ VALUES
 (20,  'Saude e Bem-estar');
 
 -- Criação de Horários --------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Horarios (Id_Horario, Turno, Inicio, Fim, Dia_Semana)
+INSERT INTO Horarios (Id_Horario, Turno, Inicio, Fim, Dia_Semana, Ano)
 VALUES 
  -- Turno da Manhã --
-(1,  'Manhã', '07:00:00', '08:40:00', 'Segunda'), -- Segunda-Feira
-(2,  'Manhã', '08:40:00', '10:20:00', 'Segunda'),
-(3,  'Manhã', '10:40:00', '12:20:00', 'Segunda'),
-(4,  'Tarde', '13:00:00', '14:40:00', 'Segunda'), 
-(5,  'Tarde', '14:40:00', '16:20:00', 'Segunda'),
-(6,  'Tarde', '16:40:00', '18:20:00', 'Segunda'),
-(7,  'Manhã', '07:00:00', '08:40:00', 'Terça'), -- Terça-Feira
-(8,  'Manhã', '08:40:00', '10:20:00', 'Terça'),
-(9,  'Manhã', '10:40:00', '12:20:00', 'Terça'),
-(10,  'Tarde', '13:00:00', '14:40:00', 'Terça'), 
-(11,  'Tarde', '14:40:00', '16:20:00', 'Terça'),
-(12,  'Tarde', '16:40:00', '18:20:00', 'Terça'),
-(13,  'Manhã', '07:00:00', '08:40:00', 'Quarta'), -- Quarta-Feira
-(14,  'Manhã', '08:40:00', '10:20:00', 'Quarta'),
-(15,  'Manhã', '10:40:00', '12:20:00', 'Quarta'),
-(16,  'Tarde', '13:00:00', '14:40:00', 'Quarta'), 
-(17,  'Tarde', '14:40:00', '16:20:00', 'Quarta'),
-(18,  'Tarde', '16:40:00', '18:20:00', 'Quarta'),
-(19,  'Manhã', '07:00:00', '08:40:00', 'Quinta'), -- Quinta-Feira
-(20,  'Manhã', '08:40:00', '10:20:00', 'Quinta'),
-(21,  'Manhã', '10:40:00', '12:20:00', 'Quinta'),
-(22,  'Tarde', '13:00:00', '14:40:00', 'Quinta'), 
-(23,  'Tarde', '14:40:00', '16:20:00', 'Quinta'),
-(24,  'Tarde', '16:40:00', '18:20:00', 'Quinta'),
-(25,  'Manhã', '07:00:00', '08:40:00', 'Sexta'), -- Sexta-Feira
-(26,  'Manhã', '08:40:00', '10:20:00', 'Sexta'),
-(27,  'Manhã', '10:40:00', '12:20:00', 'Sexta'),
-(28,  'Tarde', '13:00:00', '14:40:00', 'Sexta'), 
-(29,  'Tarde', '14:40:00', '16:20:00', 'Sexta'),
-(30,  'Tarde', '16:40:00', '18:20:00', 'Sexta');
+(1,  'Manhã', '07:00:00', '08:40:00', 'Segunda', 2024), -- Segunda-Feira
+(2,  'Manhã', '08:40:00', '10:20:00', 'Segunda', 2024),
+(3,  'Manhã', '10:40:00', '12:20:00', 'Segunda', 2024),
+(4,  'Tarde', '13:00:00', '14:40:00', 'Segunda', 2024),
+(5,  'Tarde', '14:40:00', '16:20:00', 'Segunda', 2024),
+(6,  'Tarde', '16:40:00', '18:20:00', 'Segunda', 2024),
+(7,  'Manhã', '07:00:00', '08:40:00', 'Terça', 2024), -- Terça-Feira
+(8,  'Manhã', '08:40:00', '10:20:00', 'Terça', 2024),
+(9,  'Manhã', '10:40:00', '12:20:00', 'Terça', 2024),
+(10,  'Tarde', '13:00:00', '14:40:00', 'Terça', 2024),
+(11,  'Tarde', '14:40:00', '16:20:00', 'Terça', 2024),
+(12,  'Tarde', '16:40:00', '18:20:00', 'Terça', 2024),
+(13,  'Manhã', '07:00:00', '08:40:00', 'Quarta', 2024), -- Quarta-Feira
+(14,  'Manhã', '08:40:00', '10:20:00', 'Quarta', 2024),
+(15,  'Manhã', '10:40:00', '12:20:00', 'Quarta', 2024),
+(16,  'Tarde', '13:00:00', '14:40:00', 'Quarta', 2024),
+(17,  'Tarde', '14:40:00', '16:20:00', 'Quarta', 2024),
+(18,  'Tarde', '16:40:00', '18:20:00', 'Quarta', 2024),
+(19,  'Manhã', '07:00:00', '08:40:00', 'Quinta', 2024), -- Quinta-Feira
+(20,  'Manhã', '08:40:00', '10:20:00', 'Quinta', 2024),
+(21,  'Manhã', '10:40:00', '12:20:00', 'Quinta', 2024),
+(22,  'Tarde', '13:00:00', '14:40:00', 'Quinta', 2024), 
+(23,  'Tarde', '14:40:00', '16:20:00', 'Quinta', 2024),
+(24,  'Tarde', '16:40:00', '18:20:00', 'Quinta', 2024),
+(25,  'Manhã', '07:00:00', '08:40:00', 'Sexta', 2024), -- Sexta-Feira
+(26,  'Manhã', '08:40:00', '10:20:00', 'Sexta', 2024),
+(27,  'Manhã', '10:40:00', '12:20:00', 'Sexta', 2024),
+(28,  'Tarde', '13:00:00', '14:40:00', 'Sexta', 2024), 
+(29,  'Tarde', '14:40:00', '16:20:00', 'Sexta', 2024),
+(30,  'Tarde', '16:40:00', '18:20:00', 'Sexta', 2024);
+
 -- Associar cada Professor com seu respectivo Horário (que horário esse professor dará aula) ----------------------------------------------------------------
 INSERT INTO Professores_Horarios (Horario_ID, Professor_ID) VALUES
 (1,  1),                      -- Ex: manhã 07:00, segunda, Prof. Alberto
@@ -462,8 +462,8 @@ INSERT INTO Professores_Horarios (Horario_ID, Professor_ID) VALUES
 -- Associar cada turma com suas matérias (e em qual horário ela terá aula dessa matéria) --------------------------------------------------------------------
 INSERT INTO Horarios_Materias (Horario_ID, Materia_ID, Turma_ID)
 VALUES 
-(1,  1,  1),                 -- Ex: manhã 07:00, segunda, Matemática, Turma 901
-(2,  2,  1),                 -- Ex: manhã 08:40, segunda, Português,  Turma 901
+(1,  1,  1),                 -- Ex: manhã 07:00, segunda, Matemática, Turma 801
+(2,  2,  1),                 -- Ex: manhã 08:40, segunda, Português,  Turma 801
 (3,  3,  1),
 (4,  4,  1),
 (5,  5,  1),
@@ -473,13 +473,13 @@ VALUES
 (9,  9,  1),
 (10, 10, 1),
 
-(2,  7,  2),                 -- Ex: manhã 07:00, segunda, Física,     Turma 1101
-(2,  8,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 1101
-(3,  9,  2),
-(4,  1,  2),
-(5,  2,  2),
-(6,  3,  2),
-(7,  10, 2),
-(8,  4,  2),
-(9,  5,  2),
-(10, 6,  2);
+(2,  7,  2),                 -- Ex: manhã 07:00, segunda, Física,     Turma 901
+(2,  8,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
+(3,  9,  2),                 -- Ex: manhã 10:40, segunda, sociologia, Turma 901
+(4,  1,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
+(5,  2,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
+(6,  3,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
+(7,  10, 2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
+(8,  4,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
+(9,  5,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
+(10, 6,  2);                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
