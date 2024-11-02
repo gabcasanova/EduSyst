@@ -10,3 +10,4 @@ sisescola_web/.idea
 sisescola_web/build
 
 *.lock
+*.lck
