@@ -463,23 +463,86 @@ INSERT INTO Professores_Horarios (Horario_ID, Professor_ID) VALUES
 INSERT INTO Horarios_Materias (Horario_ID, Materia_ID, Turma_ID)
 VALUES 
 (1,  1,  1),                 -- Ex: manhã 07:00, segunda, Matemática, Turma 801
-(2,  2,  1),                 -- Ex: manhã 08:40, segunda, Português,  Turma 801
-(3,  3,  1),
-(4,  4,  1),
-(5,  5,  1),
-(6,  6,  1),
-(7,  7,  1),
-(8,  8,  1),
-(9,  9,  1),
-(10, 10, 1),
+(2,  3,  1),                 -- Ex: manhã 08:40, segunda, História, Turma 801
+(3,  2,  1),                 -- Ex: manhã 10:40, segunda, Português, Turma 801
+(7,  5,  1),                 -- Ex: manhã 07:00, Terça, Projeto de Vida, Turma 801
+(8,  4,  1),                 -- Ex: manhã 08:40, Terça, Geografia, Turma 801
+(9,  7,  1),                 -- Ex: manhã 10:40, Terça, Fsíca, Turma 801
+(13,  6, 1),                 -- Ex: manhã 07:00, Quarta, Filosofia, Turma 801
+(14,  9,  1),                -- Ex: manhã 08:40, Quarta, Ingles, Turma 801
+(15,  8,  1),                -- Ex: manhã 10:40, Quarta, sociologia, Turma 801
+(19, 20,  1),                -- Ex: manhã 07:00, Quinta, Saude e Bem-estar, Turma 801
+(20, 18,  1),		       	 -- Ex: manhã 08:40, Quinta, Educação Fisica, Turma 801
+(21, 19,  1),                -- Ex: manhã 10:40, Quinta, Artes, Turma 801
+(25, 11,  1),   		     -- Ex: manhã 07:00, Sexta, Quimica, Turma 801
+(26, 17,  1),   			 -- Ex: manhã 08:40, Sexta, Gramatica, Turma 801
+(27, 10,  1),     	    	 -- Ex: manhã 10:40, Sexta, Biologia, Turma 801
+							 
+(1,  3,  2),                 -- Ex: manhã 07:00, segunda, Historia, Turma 901
+(2,  2,  2),                 -- Ex: manhã 08:40, segunda, Português, Turma 901
+(3,  1,  2),                 -- Ex: manhã 10:40, segunda, Matemática, Turma 901
+(7,  4,  2),                 -- Ex: manhã 07:00, Terça, Geografia, Turma 901
+(8,  5,  2),                 -- Ex: manhã 08:40, Terça, Projeto de Vida, Turma 901
+(9,  6,  2),                 -- Ex: manhã 10:40, Terça, Filosofia, Turma 901
+(13,  7, 2),                 -- Ex: manhã 07:00, Quarta, Fisíca, Turma 901
+(14,  8,  2),                -- Ex: manhã 08:40, Quarta, sociologia, Turma 901
+(15,  9,  2),                -- Ex: manhã 10:40, Quarta, Inglês, Turma 901
+(19, 10,  2),                -- Ex: manhã 07:00, Quinta, Biologia, Turma 901
+(20, 11,  2),		       	 -- Ex: manhã 08:40, Quinta, Quimica, Turma 901
+(21, 18,  2),                -- Ex: manhã 10:40, Quinta, Educação Fisica, Turma 901
+(25, 19,  2),   			 -- Ex: manhã 07:00, Sexta, Artes, Turma 901
+(26, 20,  2),   			 -- Ex: manhã 08:40, Sexta, Saude e bem_estar, Turma 901
+(27, 17,  2),   		     -- Ex: manhã 10:40, Sexta, Gramatica, Turma 901
+                             
+(4,  2,  3),                 -- Ex: manhã 07:00, segunda, Português, Turma 1101
+(5,  1,  3),                 -- Ex: manhã 08:40, segunda, Matemática, Turma 1101
+(6,  3,  3),                 -- Ex: manhã 10:40, segunda, Historia, Turma 1101
+(10,  15, 3),                -- Ex: manhã 07:00, Terça, Engenharia, Turma 1101
+(11,  4,  3),                -- Ex: manhã 08:40, Terça, Geografia, Turma 1101
+(12,  7,  3),                -- Ex: manhã 10:40, Terça, Fisíca, Turma 1101
+(16,  6, 3),                 -- Ex: manhã 07:00, Quarta, Filosofia, Turma 1101
+(17,  9, 3),                 -- Ex: manhã 08:40, Quarta, Inglês, Turma 1101
+(18,  10, 3),                -- Ex: manhã 10:40, Quarta, Biologia, Turma 1101
+(22, 12, 3),                 -- Ex: manhã 07:00, Quinta, Astrologia, Turma 1101
+(23, 13, 3),		       	 -- Ex: manhã 08:40, Quinta, Gastronomia, Turma 1101
+(24, 16, 3),                 -- Ex: manhã 10:40, Quinta, Montagem e Manutenção, Turma 1101
+(28, 11, 3),   			     -- Ex: manhã 07:00, Sexta, Quimica, Turma 1101
+(29, 8,  3),   			     -- Ex: manhã 08:40, Sexta, sociologia, Turma 1101
+(30, 14, 3),   		         -- Ex: manhã 10:40, Sexta, T.I., Turma 1101
+                             
+(4,  4,  4),                 -- Ex: manhã 07:00, segunda, Geografia, Turma 1201
+(5,  15, 4),                 -- Ex: manhã 08:40, segunda, Engenharia, Turma 1201
+(6,  7,  4),                 -- Ex: manhã 10:40, segunda, Fisíca, Turma 1201
+(10,  1, 4),                 -- Ex: manhã 07:00, Terça, Matemática, Turma 1201
+(11,  2, 4),                 -- Ex: manhã 08:40, Terça, Português, Turma 1201
+(12,  3, 4),                 -- Ex: manhã 10:40, Terça, História, Turma 1201
+(16,  9, 4),                 -- Ex: manhã 07:00, Quarta, Inglês, Turma 1201
+(17,  12, 4),                -- Ex: manhã 08:40, Quarta, Astrologia, Turma 1201
+(18,  14, 4),                -- Ex: manhã 10:40, Quarta, T.I., Turma 1201
+(22, 16, 4),                 -- Ex: manhã 07:00, Quinta, Montagem e Manutenção, Turma 1201
+(23, 10, 4),		       	 -- Ex: manhã 08:40, Quinta, Biologia, Turma 1201
+(24, 6,  4),                 -- Ex: manhã 10:40, Quinta, Filosofia, Turma 1201
+(28, 9,  4),   			     -- Ex: manhã 07:00, Sexta, Inglês, Turma 1201
+(29, 11, 4),   		         -- Ex: manhã 08:40, Sexta, Quimica, Turma 1201
+(30, 8,  4),   		         -- Ex: manhã 10:40, Sexta, Sociologia, Turma 1201
+							 
+(4,  14,  5),                -- Ex: manhã 07:00, segunda, T.I., Turma 1301
+(5,  8,  5),                 -- Ex: manhã 08:40, segunda, Sociologia, Turma 1301
+(6,  11,  5),                -- Ex: manhã 10:40, segunda, Quimica, Turma 1301
+(10,  16, 5),                -- Ex: manhã 07:00, Terça, Montagem e Manutenção, Turma 1301
+(11,  13, 5),                -- Ex: manhã 08:40, Terça, Gastronomia, Turma 1301
+(12,  12, 5),                -- Ex: manhã 10:40, Terça, Astrologia, Turma 1301
+(16,  10, 5),                -- Ex: manhã 07:00, Quarta, Biologia, Turma 1301
+(17,  1, 5),                 -- Ex: manhã 08:40, Quarta, Matemática, Turma 1301
+(18,  6, 5),                 -- Ex: manhã 10:40, Quarta, Filosofia, Turma 1301
+(22, 7,  5),                 -- Ex: manhã 07:00, Quinta, Fisíca, Turma 1301
+(23, 3,  5),		       	 -- Ex: manhã 08:40, Quinta, História, Turma 1301
+(24, 15, 5),                 -- Ex: manhã 10:40, Quinta, Engenharia, Turma 1301
+(28, 3,  5),   			     -- Ex: manhã 07:00, Sexta, História, Turma 1301
+(29, 9,  5),   			     -- Ex: manhã 08:40, Sexta, Inglês, Turma 1301
+(30, 2,  5);   		         -- Ex: manhã 10:40, Sexta, Português, Turma 1301
 
-(2,  7,  2),                 -- Ex: manhã 07:00, segunda, Física,     Turma 901
-(2,  8,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
-(3,  9,  2),                 -- Ex: manhã 10:40, segunda, sociologia, Turma 901
-(4,  1,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
-(5,  2,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
-(6,  3,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
-(7,  10, 2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
-(8,  4,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
-(9,  5,  2),                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
-(10, 6,  2);                 -- Ex: manhã 08:40, segunda, sociologia, Turma 901
+Select * From horarios;
+Select * From Materias;
+Select * From turmas;
+Select * From Horarios_Materias;
