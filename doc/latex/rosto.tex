@@ -1,0 +1,48 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+% Configuração da folha de rosto
+\begin{titlepage}
+
+% Instituição e Curso
+\begin{center}
+    \large % Tamanho da fonte
+    \MakeUppercase{\autores}
+\end{center}
+
+\vspace{4cm} % Espaço vertical
+
+% Título do trabalho
+\begin{center}
+    \large
+    \textbf{\MakeUppercase{\nomeprojeto}: \subtituloprojeto}
+\end{center}
+
+\vfill % Preenche o espaço vertical restante
+
+% Texto com detalhes da monografia alinhado à direita e justificado com margens
+\begin{flushright}
+    \begin{minipage}[t]{0.5\textwidth} % Ajuste a largura da minipage conforme necessário
+        \raggedleft
+        %\large
+        \justify
+        \tipotrabalho\ apresentado ao \instituicao\ como parte dos requisitos para a obtenção do título de \curso.
+        \newline
+        \newline
+        Orientador: \orientador
+    \end{minipage}
+\end{flushright}
+
+\vfill % Preenche o espaço vertical restante
+
+% Cidade e ano
+\begin{center}
+    \large
+    \MakeUppercase{\cidade}\\
+    \ano
+\end{center}
+
+\end{titlepage}
+
+\end{document}

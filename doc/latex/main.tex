@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\usepackage{subfiles}
+
+\usepackage{graphicx}          % Importar imagens.
+\graphicspath{{./imagens/}}
+
+% FORMATAR TEXTO ------------------------------------------------------------------------
+\usepackage[portuguese]{babel}   % Documento em português.
+\usepackage[utf8]{inputenc}      % Codificação UTF-8.
+\usepackage[T1]{fontenc}         % Codificação da fonte.
+\usepackage{mathptmx}            % Fonte Times New Roman.
+\usepackage{geometry}            % Configuração de margens.
+\usepackage{indentfirst}         % Indentar o primeiro parágrafo de cada seção.
+\usepackage{setspace}            % Controle de espaçamento entre linhas.
+\usepackage{titlesec}            % Controle de formatação dos títulos.
+\usepackage{enumitem}            % Personalização de listas
+\usepackage{ragged2e}            % Justificação dos textos.
+\usepackage{tocloft}             % Para personalizar o sumário.
+\usepackage{fancyhdr}            % Para personalizar o cabeçalho e o rodapé.
+\usepackage{lipsum}              % Gerador de texo.
+\usepackage{caption}             % Controle de legendas de figuras e tabelas
+\usepackage{float}               % Para opções de posicionamento mais rígidas
+\usepackage{array}
+\usepackage{pdfpages}
+
+% Configuração das margens de acordo com as normas ABNT
+\geometry{
+  a4paper,
+  left=3cm,
+  right=2cm,
+  top=3cm,
+  bottom=2cm
+}
+
+% Configuração de espaçamento
+\setlength{\parindent}{1.25cm}   % Recuo de parágrafo de 1,25 cm
+\setstretch{1.5}                 % Espaçamento entre linhas de 1,5
+
+% Configuração dos títulos de acordo com as normas ABNT
+\titleformat{\section}{\bfseries\uppercase}{\thesection.}{1em}{} % Espaçamento da seção
+\titlespacing{\section}{0pt}{\baselineskip}{\baselineskip} 
+\titleformat{\subsection}{\uppercase}{\thesubsection.}{1em}{} % Espaçamento da subseção
+\titlespacing{\subsection}{0pt}{\baselineskip}{0.7em} 
+%\titlespacing{\subsection}{1.25cm}{\baselineskip}{\baselineskip}
+
+% Configuração de listas conforme a ABNT
+\setlist[itemize]{left=0.5cm}    % Indentação para listas com marcadores
+\setlist[enumerate]{left=0.5cm}  % Indentação para listas numeradas. PADRÃO 1.25
+\setlist{noitemsep, topsep=0pt}   % Espaçamento interno simples entre itens
+\setlist[itemize,1]{label=\textbullet} % Nível 1
+\setlist[itemize,2]{label=\textendash} % Nível 2 (se aplicável)
+\setlist[itemize,3]{label=\textperiodcentered} % Nível 3 (se aplicável)
+
+% Páginas Principais (numeração em arábico)
+\pagenumbering{arabic}
+
+% Configura o estilo de página para exibir o número no canto superior direito
+\pagestyle{fancy}
+\fancyhf{} % Limpa o cabeçalho e rodapé padrão
+\fancyhead[R]{\thepage} % Número da página à direita no cabeçalho
+\renewcommand{\headrulewidth}{0pt}
+%----------------------------------------------------------------------------------------
+
+% BIBLIOGRAFIA. -------------------------------------------------------------------------
+% \usepackage{csquotes}
+% \usepackage[style=authoryear-icomp]{biblatex}
+% \addbibresource{bibliografia.bib}
+%----------------------------------------------------------------------------------------
+
+% VARIÁVEIS -----------------------------------------------------------------------------
+% Instituição
+\def\instituicao{Instituto Superior de Educação do Rio de Janeiro - ISERJ/FAETEC}
+\def\curso{Técnico em Informática}
+
+\def\orientador{Prof. Dr. Marcus Vinicius dos Santos Claro}     % Banca
+
+% Local e data
+\def\cidade{Rio de Janeiro}
+\def\ano{2024}
+
+% Projeto
+\def\tipotrabalho{Trabalho de Conclusão de Curso}
+\def\autores{Gabriel B. Casanova, Gabriel da S. Ferreira, Gabriel H. V. da Cunha, Matheus G. F. Menezes}
+\def\nomeprojeto{EduSYST}
+\def\subtituloprojeto{Sistema de Gestão Escolar para Escolas de Ensino Medio}
+
+%\author{Gabriel Babo Casanova, Gabriel da Silva Ferreira\\Gabriel Henrique Veríssimo da Cunha \& Matheus Gomes Ferreira Menezes}
+%\title{EduSyst}
+%\date{2024}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% ELEMENTOS PRÉ TEXTUAIS
+\subfile{capa}           % Capa
+\subfile{rosto}          % Folha de Rosto
+% \subfile{aprovacao}      % Folha de Aprovação
+\subfile{agradecimentos} % Folha de Agradecimentos
+% \subfile{resumo}         % Resumo (e Abstract)
+\subfile{sumario}        % Sumário
+
+\pagenumbering{arabic} % Retoma a numeração em estilo arábico
+
+% ELEMENTOS TEXTUAIS
+
+\subfile{desenvolvimento}
+
+
+\end{document}

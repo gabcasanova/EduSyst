@@ -1,0 +1,65 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\begin{titlepage}
+
+% Autores
+\begin{center}
+    \large
+    \MakeUppercase{\autores}
+\end{center}
+
+\vspace{0.5cm} 
+
+% Título do trabalho
+\begin{center}
+    \large
+    \textbf{\MakeUppercase{\nomeprojeto}: \subtituloprojeto}
+\end{center}
+
+\vspace{2cm}
+
+% Texto de aprovação
+Este \tipotrabalho\ julgado adequado para obtenção do título de \curso, e aprovado em sua forma final pela \instituicao\ em
+\\
+\makebox[1cm]{\hrulefill}/\makebox[1cm]{\hrulefill}/\makebox[2cm]{\hrulefill}
+
+% Banca
+\vfill % Preenche o espaço vertical restante
+
+% Texto com detalhes da monografia alinhado à direita e justificado com margens
+\begin{flushright}
+    \begin{minipage}[t]{1\textwidth} % Ajuste a largura da minipage conforme necessário
+        \raggedleft
+
+        \makebox[9.5cm]{\hrulefill}\\
+        Orientador: \orientador
+        \vspace{1cm}
+
+        \makebox[9.5cm]{\hrulefill}\\
+        Prof. Fernando Moreira
+        \vspace{1cm}
+
+        \makebox[9.5cm]{\hrulefill}\\
+        Prof. Octacílio Alvarenga Filho
+        \vspace{1cm}
+
+        \makebox[9.5cm]{\hrulefill}\\
+        Prof. Arnaldo Filho\\
+        Coordenador do Curso de \curso
+    \end{minipage}
+\end{flushright}
+
+\vfill
+
+% Cidade e ano
+\begin{center}
+    \large
+    \MakeUppercase{\cidade}\\
+    \ano
+\end{center}
+
+\end{titlepage}
+
+\end{document}

@@ -1,0 +1,38 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\pagenumbering{gobble} % Desativa temporariamente a numeração de páginas
+
+% Configuração do Sumário conforme a ABNT
+\renewcommand{\cftsecfont}{\normalsize\bfseries} % Seções em negrito
+\renewcommand{\cftsecpagefont}{\normalsize}      % Números de páginas em fonte normal
+\renewcommand{\cftsecdotsep}{1}                  % Espaçamento entre título e numeração
+\renewcommand{\contentsname}{\centerline{\large\MakeUppercase{Sumário}}} % Centraliza o título
+
+% Reduz o espaçamento entre as linhas do sumário
+%\setlength{\cftbeforesecskip}{-0.1em} % Ajuste para o espaço vertical antes de cada seção (pode ser diminuído conforme necessário)
+%\setlength{\cftbeforesubsecskip}{-0.1em} % Para espaçamento antes das subseções
+%\setlength{\cftbeforesubsubsecskip}{-0.1em} % Para espaçamento antes das sub-subseções
+%\setlength{\cftaftertoctitleskip}{-2em}    % Espaçamento depois do título do sumário
+
+% Geração do Sumário
+\tableofcontents
+\newpage
+
+% --------------------------------------------------------------
+
+% Configuração da Lista de Figuras conforme a ABNT
+\renewcommand{\cftloftitlefont}{\hfill\bfseries\large\MakeUppercase} % Título centralizado e em maiúsculas
+\renewcommand{\cftafterloftitle}{\hfill} % Centraliza o título "Lista de Figuras"
+\renewcommand{\cftfigfont}{\normalsize} % Fonte normal para os itens da lista
+\renewcommand{\cftfigpagefont}{\normalsize} % Fonte normal para os números de páginas
+\renewcommand{\cftfigdotsep}{1} % Espaçamento entre o título da figura e o número da página
+
+% Define o espaçamento vertical entre as entradas da lista de figuras
+\setlength{\cftbeforefigskip}{0.5em} % Ajusta o espaçamento entre os itens da lista
+
+% Geração da Lista de Figuras
+\listoffigures
+\newpage
+
+\end{document}
