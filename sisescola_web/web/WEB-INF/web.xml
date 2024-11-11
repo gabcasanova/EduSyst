@@ -20,6 +20,10 @@
         <servlet-name>LancarNota</servlet-name>
         <servlet-class>selections.LancarNota</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApagarAtiv</servlet-name>
+        <servlet-class>selections.ApagarAtiv</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
@@ -27,6 +31,10 @@
     <servlet-mapping>
         <servlet-name>LancarNota</servlet-name>
         <url-pattern>/LancarNota</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApagarAtiv</servlet-name>
+        <url-pattern>/ApagarAtiv</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
