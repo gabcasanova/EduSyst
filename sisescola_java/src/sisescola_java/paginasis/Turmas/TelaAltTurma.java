@@ -78,6 +78,7 @@ public class TelaAltTurma extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Atualizar Turma");
 
         pnlTopoC.setBackground(new java.awt.Color(2, 48, 71));
         pnlTopoC.setMinimumSize(new java.awt.Dimension(800, 100));
@@ -324,8 +325,8 @@ public class TelaAltTurma extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, 677, Short.MAX_VALUE)
-            .addComponent(pnlPrincipalC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlBottomC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
+            .addComponent(pnlPrincipalC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

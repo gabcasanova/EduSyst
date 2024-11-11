@@ -61,7 +61,7 @@ public class Telalogin extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Adm Escola");
+        setTitle("Login");
         setBackground(new java.awt.Color(0, 0, 0));
         setMaximumSize(new java.awt.Dimension(812, 648));
         setMinimumSize(new java.awt.Dimension(812, 648));
@@ -95,7 +95,7 @@ public class Telalogin extends javax.swing.JFrame {
                 .addComponent(lbLoginTop2)
                 .addGap(0, 0, 0)
                 .addComponent(lblLoginTop)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(333, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

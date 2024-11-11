@@ -74,19 +74,17 @@ public class TurmaDAO {
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<Turma> turmas = new ArrayList<>();
-
         try {
             String sql = "SELECT a.Nome, a.Email, t.Id_Turma, t.Classe, t.Ano, t.Etapa "
                     + "FROM Alunos AS a "
                     + "JOIN Turmas_Alunos AS at ON a.Id_Aluno = at.Aluno_ID "
                     + "JOIN Turmas AS t ON t.Id_Turma = at.Turma_ID "
-                    + "WHERE t.Classe = ?"; // Consulta pela classe
+                    + "WHERE t.Classe = ?"; 
 
             ps = con.prepareStatement(sql);
-            ps.setInt(1, classe); // Ajuste para int
+            ps.setInt(1, classe); 
             rs = ps.executeQuery();
 
-            // Mapa para armazenar turmas e seus alunos
             Map<Integer, Turma> mapaTurmas = new HashMap<>();
 
             while (rs.next()) {
@@ -94,8 +92,6 @@ public class TurmaDAO {
                 int classeTurma = rs.getInt("Classe");
                 int ano = rs.getInt("Ano");
                 String etapa = rs.getString("Etapa");
-
-                // Se a turma já existir no mapa, apenas adiciona o aluno
                 Turma t = mapaTurmas.get(classeTurma);
                 if (t == null) {
                     t = new Turma();
@@ -105,24 +101,18 @@ public class TurmaDAO {
                     t.setEtapa(etapa);
                     mapaTurmas.put(classeTurma, t);
                 }
-
                 Aluno aluno = new Aluno();
                 aluno.setNomeA(rs.getString("Nome"));
                 aluno.setEmailA(rs.getString("Email"));
-
-                // Adiciona o aluno à turma
                 t.addAluno(aluno);
             }
-
-            // Adiciona todas as turmas ao resultado final
             turmas.addAll(mapaTurmas.values());
-
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao consultar: " + e.getMessage());
         } finally {
             ConnectionFactory.closeConnection(con, ps, rs);
         }
-        return turmas; // Retorna a lista de turmas com seus alunos
+        return turmas; 
     }
 
     public List<Turma> consultar() throws ClassNotFoundException, SQLException {

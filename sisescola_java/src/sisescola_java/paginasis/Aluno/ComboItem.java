@@ -8,7 +8,7 @@ package sisescola_java.paginasis.Aluno;
  *
  * @author Matheus
  */
-public class ComboItem {
+/*public class ComboItem {
     private int id;
     private String description;
 
@@ -29,4 +29,4 @@ public class ComboItem {
     public String toString() {
         return description;  // Isso é o que será mostrado na JComboBox
     }
-}
+}*/

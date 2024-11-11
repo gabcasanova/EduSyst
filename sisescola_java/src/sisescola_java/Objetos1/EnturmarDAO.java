@@ -55,13 +55,11 @@ public class EnturmarDAO {
                 aluno.setNomeA(rs.getString("NomeA"));
                 alunosEnturmados.add(aluno);
             }
-
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao buscar alunos enturmados: " + e.getMessage());
         } finally {
             ConnectionFactory.closeConnection(con, ps, rs);
         }
-
         return alunosEnturmados;
     }
 

@@ -71,6 +71,7 @@ public class TelaDelMateria extends javax.swing.JFrame {
         lblTopoC = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Excluir Matéria");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -206,7 +207,7 @@ public class TelaDelMateria extends javax.swing.JFrame {
                         .addComponent(lblNomeMa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel12)
-                        .addGap(108, 108, 108))))
+                        .addGap(110, 110, 110))))
             .addComponent(pnlBottomC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
         );
         pnlPrincipalCLayout.setVerticalGroup(

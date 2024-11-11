@@ -212,7 +212,7 @@ public class AlunoDAO {
             ps.setString(3, a.getNomeA());
             ps.setString(4, a.getEmailA());
             ps.setString(5, a.getSenhaA());
-            ps.setString(6, a.getDataA());
+            ps.setString(6, a.getData_NascA());
             ps.setString(7, a.getEnderecoA());
             ps.setString(8, a.getTelefoneA());
             ps.setString(9, a.getGeneroA());
@@ -238,7 +238,7 @@ public class AlunoDAO {
             ps.setString(1, a.getNomeA());
             ps.setString(2, a.getEmailA());
             ps.setString(3, a.getSenhaA());
-            ps.setString(4, a.getDataA());
+            ps.setString(4, a.getData_NascA());
             ps.setString(5, a.getEnderecoA());
             ps.setString(6, a.getTelefoneA());
             ps.setString(7, a.getGeneroA());
@@ -268,7 +268,7 @@ public class AlunoDAO {
             // Define os parâmetros da query
             ps.setString(1, a.getNomeA());
             ps.setString(2, a.getEmailA());
-            ps.setString(3, a.getDataA());
+            ps.setString(3, a.getData_NascA());
             ps.setString(4, a.getEnderecoA());
             ps.setString(5, a.getTelefoneA());
             ps.setString(6, a.getGeneroA());

@@ -12,7 +12,6 @@ public class Aluno {
 
     private int Id_Aluno, Id_Responsavel, DiaA, MesA, AnoA;
     private String CPFAluno, NomeA, EmailA, SenhaA, Data_NascA, EnderecoA, TelefoneA, GeneroA, classeTurma, nomeResponsavel;
-    private String DataA;
 
     public int getId_Aluno() {
         return Id_Aluno;
@@ -116,14 +115,6 @@ public class Aluno {
 
     public void setAnoA(int AnoA) {
         this.AnoA = AnoA;
-    }
-
-    public String getDataA() {
-        return DataA;
-    }
-
-    public void setDataA(String DataA) {
-        this.DataA = DataA;
     }
 
     public String getNomeResponsavel() {

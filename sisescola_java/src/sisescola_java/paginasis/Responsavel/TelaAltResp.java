@@ -7,6 +7,7 @@ package sisescola_java.paginasis.Responsavel;
 import sisescola_java.paginasis.Aluno.*;
 import java.awt.Color;
 import java.sql.*;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Vector;
@@ -22,6 +23,7 @@ import sisescola_java.Objetos1.*;
  * @author Matheus
  */
 public class TelaAltResp extends javax.swing.JFrame {
+
     public void boxGeneros() {
         try {
             ResponsavelDAO rpd = new ResponsavelDAO();
@@ -50,6 +52,12 @@ public class TelaAltResp extends javax.swing.JFrame {
                     txtNomeAResp.setText(R.getNomeResp());
                     txtEmailAResp.setText(R.getEmailResp());
                     txtSenhaAResp.setText("");
+                    if (R.getData_NascResp() != null) {
+                        LocalDate data = LocalDate.parse(R.getData_NascResp(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                        txtDiaAResp.setText(String.valueOf(data.getDayOfMonth()));
+                        txtMesAResp.setText(String.valueOf(data.getMonthValue()));
+                        txtAnoAResp.setText(String.valueOf(data.getYear()));
+                    }
                     txtEnderecoAResp.setText(R.getEnderecoResp());
                     txtTelefoneAResp.setText(R.getTelefoneResp());
                     boxGeneroAResp.setSelectedItem(String.valueOf(R.getGeneroResp()));
@@ -62,9 +70,12 @@ public class TelaAltResp extends javax.swing.JFrame {
                     txtNomeAResp.setText(R.getNomeResp());
                     txtEmailAResp.setText(R.getEmailResp());
                     txtSenhaAResp.setText("");
-                    txtDiaAResp.setText(String.valueOf(R.getDiaResp()));
-                    txtMesAResp.setText(String.valueOf(R.getMesResp()));
-                    txtAnoAResp.setText(String.valueOf(R.getAnoResp()));
+                    if (R.getData_NascResp() != null) {
+                        LocalDate data = LocalDate.parse(R.getData_NascResp(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                        txtDiaAResp.setText(String.valueOf(data.getDayOfMonth()));
+                        txtMesAResp.setText(String.valueOf(data.getMonthValue()));
+                        txtAnoAResp.setText(String.valueOf(data.getYear()));
+                    }
                     txtEnderecoAResp.setText(R.getEnderecoResp());
                     txtTelefoneAResp.setText(R.getTelefoneResp());
                     boxGeneroAResp.setSelectedItem(String.valueOf(R.getGeneroResp()));
@@ -129,6 +140,7 @@ public class TelaAltResp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Alterar Responsável");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -330,7 +342,7 @@ public class TelaAltResp extends javax.swing.JFrame {
                         .addComponent(txtPesquisarAltResp, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btPesquisaAltResp)
-                        .addContainerGap(160, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pnlPrincipalCLayout.createSequentialGroup()
@@ -621,25 +633,21 @@ public class TelaAltResp extends javax.swing.JFrame {
         r.setNomeResp(txtNomeAResp.getText());
         r.setEmailResp(txtEmailAResp.getText());
         r.setSenhaResp(txtSenhaAResp.getText());
-        
 
         try {
             int dia = Integer.parseInt(txtDiaAResp.getText());
             int mes = Integer.parseInt(txtMesAResp.getText());
             int ano = Integer.parseInt(txtAnoAResp.getText());
-            if (dia > 31 || dia == 0) {
-                JOptionPane.showMessageDialog(null, "Dia inválido");
-                return;
-            } else if (mes > 12 || mes == 0) {
-                JOptionPane.showMessageDialog(null, "Mês inválido");
-                return;
-            } else if (ano < 1944 || ano > 2024) {
-                JOptionPane.showMessageDialog(null, "Ano inválido");
-                return;
-            } else {
+
+            // Tentativa de criar a data diretamente
+            try {
                 LocalDate data = LocalDate.of(ano, mes, dia);
                 String dataFormatada = data.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                r.setData_NascResp(dataFormatada);
+                r.setData_NascResp(dataFormatada);  // Assumindo que r é o objeto Responsavel
+            } catch (DateTimeException e) {
+                // Caso a data seja inválida
+                JOptionPane.showMessageDialog(null, "Data inválida: " + e.getMessage());
+                return;
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Dia, mês e ano devem ser números válidos.");
@@ -649,10 +657,10 @@ public class TelaAltResp extends javax.swing.JFrame {
         r.setTelefoneResp(txtTelefoneAResp.getText());
         r.setGeneroResp(boxGeneroAResp.getSelectedItem().toString());
         try {
-            if(txtSenhaAResp.getText().isBlank() || txtSenhaAResp.getText().isEmpty()){
-            dao.AtualizarRespSemSenha(r);
-            }else{
-            dao.AtualizarRespComSenha(r);
+            if (txtSenhaAResp.getText().isBlank() || txtSenhaAResp.getText().isEmpty()) {
+                dao.AtualizarRespSemSenha(r);
+            } else {
+                dao.AtualizarRespComSenha(r);
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(TelaCadResp.class.getName()).log(Level.SEVERE, null, ex);

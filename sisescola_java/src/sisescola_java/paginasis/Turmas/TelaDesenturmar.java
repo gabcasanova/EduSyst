@@ -9,20 +9,11 @@ import static java.awt.event.KeyEvent.VK_ENTER;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sisescola_java.Objetos1.*;
-import sisescola_java.Objetos1.AlunoDAO;
-import sisescola_java.Objetos1.Enturmar;
 import sisescola_java.Objetos1.EnturmarDAO;
 import sisescola_java.Objetos1.Turma;
-import sisescola_java.Objetos1.TurmaDAO;
-import sisescola_java.paginasis.Aluno.TelaAluno;
-import sisescola_java.paginasis.Aluno.TelaConsAluno;
 
 /**
  *
@@ -146,6 +137,7 @@ public class TelaDesenturmar extends javax.swing.JFrame {
         tblDesenturmar = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Desenturmar");
         setLocation(new java.awt.Point(0, 0));
         setResizable(false);
 
@@ -163,7 +155,7 @@ public class TelaDesenturmar extends javax.swing.JFrame {
         pnlTopoCLayout.setHorizontalGroup(
             pnlTopoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTopoCLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addComponent(lblTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(134, 134, 134))
         );
@@ -337,7 +329,7 @@ public class TelaDesenturmar extends javax.swing.JFrame {
                 .addComponent(txtPCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btPesquisaEnt)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlPrincipalCLayout.setVerticalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,12 +406,11 @@ public class TelaDesenturmar extends javax.swing.JFrame {
         String cpfOuNome = txtPCPF.getText();
         EnturmarDAO enturmarDAO = new EnturmarDAO();
         try {
-            // Consultando o aluno e a turma ao qual ele pertence
             Aluno aluno = enturmarDAO.buscarAlunoPorCPFOuNome(cpfOuNome);
             if (aluno != null) {
                 lblIDAluno.setText(String.valueOf(aluno.getId_Aluno()));
                 lblNomeAluno.setText(aluno.getNomeA());
-                carregarTurmas(aluno.getId_Aluno()); // Carrega as turmas associadas ao aluno
+                carregarTurmas(aluno.getId_Aluno());
             } else {
                 JOptionPane.showMessageDialog(null, "Aluno não encontrado.");
             }

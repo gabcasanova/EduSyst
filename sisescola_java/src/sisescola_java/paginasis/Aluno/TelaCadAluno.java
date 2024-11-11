@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Vector;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -26,7 +27,6 @@ import javax.swing.JOptionPane;
 public class TelaCadAluno extends javax.swing.JFrame {
 
     Vector<Integer> Id_Responsavel = new Vector<Integer>();
-    
 
     private int getIdFromComboBox(JComboBox<String> comboBox, Vector<Integer> idList) {
         int index = comboBox.getSelectedIndex();
@@ -172,6 +172,7 @@ public class TelaCadAluno extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastrar Aluno");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -194,7 +195,7 @@ public class TelaCadAluno extends javax.swing.JFrame {
             .addGroup(pnlTopoCLayout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(lblTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         pnlTopoCLayout.setVerticalGroup(
             pnlTopoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,7 +414,7 @@ public class TelaCadAluno extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtEmailA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-                            .addComponent(txtCPFA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                            .addComponent(txtCPFA, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNomeA, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addComponent(jLabel14)
@@ -437,7 +438,7 @@ public class TelaCadAluno extends javax.swing.JFrame {
                         .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(boxGeneroA, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTelefoneA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
                         .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -607,11 +608,11 @@ public class TelaCadAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void boxGeneroAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxGeneroAMouseEntered
-        
+
     }//GEN-LAST:event_boxGeneroAMouseEntered
 
     private void boxGeneroAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxGeneroAMouseExited
-        
+
     }//GEN-LAST:event_boxGeneroAMouseExited
 
     private void btLimparAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLimparAMouseEntered
@@ -623,11 +624,11 @@ public class TelaCadAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_btLimparAMouseExited
 
     private void boxRespAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxRespAMouseEntered
-        
+
     }//GEN-LAST:event_boxRespAMouseEntered
 
     private void boxRespAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxRespAMouseExited
-        
+
     }//GEN-LAST:event_boxRespAMouseExited
 
     private void btnVoltarCadAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarCadAMouseEntered
@@ -698,26 +699,32 @@ public class TelaCadAluno extends javax.swing.JFrame {
             int dia = Integer.parseInt(txtDiaA.getText());
             int mes = Integer.parseInt(txtMesA.getText());
             int ano = Integer.parseInt(txtAnoA.getText());
-            if (dia > 31 || dia == 0) {
-                JOptionPane.showMessageDialog(null, "Dia inválido");
+
+            if (dia <= 0 || dia > 31) {
+                JOptionPane.showMessageDialog(null, "Dia inválido. Deve estar entre 1 e 31.");
                 return;
-            } else if (mes > 12 || mes == 0) {
-                JOptionPane.showMessageDialog(null, "Mês inválido");
-                return;
-            } else if (ano < 1944 || ano > 2024) {
-                JOptionPane.showMessageDialog(null, "Ano inválido");
-                return;
-            } else {
-                LocalDate data = LocalDate.of(ano, mes, dia);
-                String dataFormatada = data.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                a.setDataA(dataFormatada);
             }
+            if (mes <= 0 || mes > 12) {
+                JOptionPane.showMessageDialog(null, "Mês inválido. Deve estar entre 1 e 12.");
+                return;
+            }
+            if (ano < 1900 || ano > LocalDate.now().getYear()) {
+                JOptionPane.showMessageDialog(null, "Ano inválido. Deve estar entre 1900 e o ano atual.");
+                return;
+            }
+            LocalDate data = LocalDate.of(ano, mes, dia);
+
+            String dataFormatada = data.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            a.setData_NascA(dataFormatada);
+
+            System.out.println("Data de nascimento cadastrada: " + dataFormatada);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Dia, mês e ano devem ser números válidos.");
-            return;
+        } catch (DateTimeParseException e) {
+            JOptionPane.showMessageDialog(null, "Data inválida.");
         }
         int idResponsavel = getIdFromComboBox(boxRespA, Id_Responsavel);
-        
+
         if (idResponsavel != -1) {
             a.setId_Responsavel(idResponsavel);
         } else {

@@ -10,6 +10,7 @@ package sisescola_java.Objetos1;
  */
 public class Enturmar {
     private int Turma_ID , Aluno_ID;
+    
 
     public int getTurma_ID() {
         return Turma_ID;

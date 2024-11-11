@@ -11,19 +11,19 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Vector;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 /**
  *
  * @author Aluno
  */
 public class TelaConsAluno extends javax.swing.JFrame {
+
 
     public void consultainicial() {
         DefaultTableModel modelo = (DefaultTableModel) tblConsulta.getModel();
@@ -131,6 +131,7 @@ public class TelaConsAluno extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Consultar Aluno");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -198,7 +199,7 @@ public class TelaConsAluno extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID_Aluno", "CPF", "Nome", "Email", "Data_Nasc", "Endereco", "Telefone", "Genero", "Nome", "Classe"
+                "ID_Aluno", "CPF", "Nome", "Email", "Data_Nasc", "Endereco", "Telefone", "Genero", "Responsável", "Classe"
             }
         ) {
             Class[] types = new Class [] {
@@ -230,10 +231,10 @@ public class TelaConsAluno extends javax.swing.JFrame {
             tblConsulta.getColumnModel().getColumn(4).setPreferredWidth(80);
             tblConsulta.getColumnModel().getColumn(4).setMaxWidth(80);
             tblConsulta.getColumnModel().getColumn(5).setPreferredWidth(215);
-            tblConsulta.getColumnModel().getColumn(6).setMinWidth(58);
-            tblConsulta.getColumnModel().getColumn(6).setPreferredWidth(58);
+            tblConsulta.getColumnModel().getColumn(6).setMinWidth(60);
+            tblConsulta.getColumnModel().getColumn(6).setPreferredWidth(60);
             tblConsulta.getColumnModel().getColumn(7).setPreferredWidth(38);
-            tblConsulta.getColumnModel().getColumn(8).setMinWidth(30);
+            tblConsulta.getColumnModel().getColumn(8).setMinWidth(100);
             tblConsulta.getColumnModel().getColumn(8).setPreferredWidth(30);
             tblConsulta.getColumnModel().getColumn(9).setMinWidth(35);
             tblConsulta.getColumnModel().getColumn(9).setPreferredWidth(35);
@@ -261,19 +262,20 @@ public class TelaConsAluno extends javax.swing.JFrame {
         pnlPrincipalCLayout.setHorizontalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPrincipalCLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVoltarACons)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPrincipalCLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVoltarACons)
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1))
+                    .addGroup(pnlPrincipalCLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1225, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
         );
         pnlPrincipalCLayout.setVerticalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

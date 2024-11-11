@@ -4,13 +4,15 @@
  */
 package sisescola_java.Objetos1;
 
-/***
+/**
+ * *
  * @author Matheus
  */
-public class Professor{
+public class Professor {
+
     private int Id_Professor, Diap, Mesp, Anop;
     private String CPFp, Nomep, Emailp, Senhap, Data_Nascp, Enderecop, Telefonep, Generop;
-    private String Datap;
+
 
     public int getId_Professor() {
         return Id_Professor;
@@ -108,12 +110,4 @@ public class Professor{
         this.Generop = Generop;
     }
 
-    public String getDatap() {
-        return Datap;
-    }
-
-    public void setDatap(String Datap) {
-        this.Datap = Datap;
-    }
-    
 }

@@ -54,6 +54,7 @@ public class TelaAluno extends javax.swing.JFrame {
         label1.setText("label1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Aluno");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -216,6 +217,11 @@ public class TelaAluno extends javax.swing.JFrame {
                 btImprimirAMouseExited(evt);
             }
         });
+        btImprimirA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btImprimirAActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(2, 48, 71));
@@ -244,7 +250,7 @@ public class TelaAluno extends javax.swing.JFrame {
                 .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btConsultarA)
                     .addComponent(btExcluirA))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlPrincipalALayout.createSequentialGroup()
                 .addGap(126, 126, 126)
                 .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,6 +436,12 @@ public class TelaAluno extends javax.swing.JFrame {
         td.setVisible(true);
         dispose();
     }//GEN-LAST:event_btExcluirAActionPerformed
+
+    private void btImprimirAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btImprimirAActionPerformed
+        TelaImpAluno tia = new TelaImpAluno();
+        tia.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btImprimirAActionPerformed
 
     /**
      * @param args the command line arguments

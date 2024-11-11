@@ -8,6 +8,7 @@ import java.awt.Color;
 
 import sisescola_java.paginasis.Turmas.TelaTurmas;
 import sisescola_java.paginasis.Aluno.TelaAluno;
+import sisescola_java.paginasis.Horarios.TelaHorarios;
 import sisescola_java.paginasis.Professores.TelaProfessores;
 import sisescola_java.paginasis.Materias.TelaMaterias;
 import sisescola_java.paginasis.Responsavel.TelaResponsavel;
@@ -52,11 +53,14 @@ public class TelaCRUDS extends javax.swing.JFrame {
         btResp = new javax.swing.JButton();
         lblResp = new javax.swing.JLabel();
         btDeslogar = new javax.swing.JButton();
+        btResp1 = new javax.swing.JButton();
+        lblTurma1 = new javax.swing.JLabel();
         pnlBottomC = new javax.swing.JPanel();
         lblBottomC = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Início");
         setBackground(new java.awt.Color(204, 204, 204));
         setName("telaCdst"); // NOI18N
         setResizable(false);
@@ -226,6 +230,29 @@ public class TelaCRUDS extends javax.swing.JFrame {
             }
         });
 
+        btResp1.setBackground(new java.awt.Color(142, 202, 230));
+        btResp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Imagensbotãopequeno/Escala.png"))); // NOI18N
+        btResp1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 5, true));
+        btResp1.setMaximumSize(new java.awt.Dimension(144, 144));
+        btResp1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btResp1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btResp1MouseExited(evt);
+            }
+        });
+        btResp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btResp1ActionPerformed(evt);
+            }
+        });
+
+        lblTurma1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblTurma1.setForeground(new java.awt.Color(2, 48, 71));
+        lblTurma1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTurma1.setText("Horários");
+
         javax.swing.GroupLayout pnlPrincipalCLayout = new javax.swing.GroupLayout(pnlPrincipalC);
         pnlPrincipalC.setLayout(pnlPrincipalCLayout);
         pnlPrincipalCLayout.setHorizontalGroup(
@@ -233,69 +260,74 @@ public class TelaCRUDS extends javax.swing.JFrame {
             .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                 .addGap(134, 134, 134)
                 .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btTurmas, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlPrincipalCLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(lblTurma))
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(lblAluno)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnlPrincipalCLayout.createSequentialGroup()
-                        .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btTurmas, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlPrincipalCLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(lblTurma)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
-                                .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblResp)
-                                    .addComponent(btResp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(72, 72, 72))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
-                                .addComponent(btDeslogar)
-                                .addGap(120, 120, 120)))))
+                        .addComponent(lblAluno)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
+                        .addComponent(btDeslogar)
+                        .addGap(123, 123, 123))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
+                        .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btResp1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblResp, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btResp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(76, 76, 76))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
+                        .addComponent(lblTurma1)
+                        .addGap(101, 101, 101)))
+                .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(lblMaterias))
-                    .addComponent(btMaterias)
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(lblProfessor)))
+                        .addComponent(lblProfessor))
+                    .addComponent(btMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(138, 138, 138))
         );
         pnlPrincipalCLayout.setVerticalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(pnlPrincipalCLayout.createSequentialGroup()
-                        .addComponent(lblProfessor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblMaterias)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addComponent(lblAluno)
-                        .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(lblTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btTurmas, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(pnlPrincipalCLayout.createSequentialGroup()
+                        .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(pnlPrincipalCLayout.createSequentialGroup()
-                                .addGap(61, 61, 61)
                                 .addComponent(lblResp)
-                                .addGap(18, 18, 18)
-                                .addComponent(btResp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btDeslogar))
-                            .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(lblTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btTurmas, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                                .addComponent(btResp, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlPrincipalCLayout.createSequentialGroup()
+                                .addComponent(lblProfessor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblMaterias)
+                            .addComponent(lblTurma1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btResp1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addComponent(btDeslogar)
+                        .addContainerGap())))
         );
 
         pnlBottomC.setBackground(new java.awt.Color(2, 48, 71));
@@ -343,10 +375,9 @@ public class TelaCRUDS extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(pnlPrincipalC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlPrincipalC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(pnlBottomC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(pnlBottomC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -440,6 +471,20 @@ public class TelaCRUDS extends javax.swing.JFrame {
         btDeslogar.setForeground(new Color(2,48,71));
     }//GEN-LAST:event_btDeslogarMouseExited
 
+    private void btResp1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btResp1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btResp1MouseEntered
+
+    private void btResp1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btResp1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btResp1MouseExited
+
+    private void btResp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btResp1ActionPerformed
+        TelaHorarios th = new TelaHorarios();
+        th.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btResp1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -482,6 +527,7 @@ public class TelaCRUDS extends javax.swing.JFrame {
     private javax.swing.JButton btMaterias;
     private javax.swing.JButton btProfessor;
     private javax.swing.JButton btResp;
+    private javax.swing.JButton btResp1;
     private javax.swing.JButton btTurmas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAluno;
@@ -491,6 +537,7 @@ public class TelaCRUDS extends javax.swing.JFrame {
     private javax.swing.JLabel lblResp;
     private javax.swing.JLabel lblTopoC;
     private javax.swing.JLabel lblTurma;
+    private javax.swing.JLabel lblTurma1;
     private javax.swing.JPanel pnlBottomC;
     private javax.swing.JPanel pnlPrincipalC;
     private javax.swing.JPanel pnlTopoC;

@@ -78,6 +78,7 @@ public class TelaDelTurma extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Deletar Turma");
 
         pnlTopoC.setBackground(new java.awt.Color(2, 48, 71));
         pnlTopoC.setMinimumSize(new java.awt.Dimension(800, 100));
@@ -242,7 +243,7 @@ public class TelaDelTurma extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(0, 0, 0)
                 .addComponent(lblBottomC)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         pnlBottomCLayout.setVerticalGroup(
             pnlBottomCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,10 +294,9 @@ public class TelaDelTurma extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btpesquisadeResp)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalC1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlBottomC, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+            .addGroup(pnlPrincipalC1Layout.createSequentialGroup()
+                .addComponent(pnlBottomC, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlPrincipalC1Layout.setVerticalGroup(
             pnlPrincipalC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,8 +342,8 @@ public class TelaDelTurma extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, 777, Short.MAX_VALUE)
-            .addComponent(pnlPrincipalC1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, 783, Short.MAX_VALUE)
+            .addComponent(pnlPrincipalC1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

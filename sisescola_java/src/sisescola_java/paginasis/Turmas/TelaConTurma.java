@@ -134,6 +134,7 @@ public class TelaConTurma extends javax.swing.JFrame {
         tblConsulta = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Consultar Turmas");
         setLocation(new java.awt.Point(480, 270));
 
         pnlTopoC.setBackground(new java.awt.Color(2, 48, 71));
@@ -152,7 +153,7 @@ public class TelaConTurma extends javax.swing.JFrame {
             .addGroup(pnlTopoCLayout.createSequentialGroup()
                 .addGap(125, 125, 125)
                 .addComponent(lblTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlTopoCLayout.setVerticalGroup(
             pnlTopoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,6 +277,7 @@ public class TelaConTurma extends javax.swing.JFrame {
             tblConsulta.getColumnModel().getColumn(3).setMaxWidth(50);
             tblConsulta.getColumnModel().getColumn(4).setPreferredWidth(50);
             tblConsulta.getColumnModel().getColumn(4).setMaxWidth(50);
+            tblConsulta.getColumnModel().getColumn(5).setMinWidth(125);
             tblConsulta.getColumnModel().getColumn(5).setMaxWidth(150);
         }
 
@@ -291,8 +293,8 @@ public class TelaConTurma extends javax.swing.JFrame {
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addComponent(boxIDT, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblIDTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -317,7 +319,7 @@ public class TelaConTurma extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlTopoC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlBottomC, javax.swing.GroupLayout.DEFAULT_SIZE, 867, Short.MAX_VALUE)
+            .addComponent(pnlBottomC, javax.swing.GroupLayout.DEFAULT_SIZE, 933, Short.MAX_VALUE)
             .addComponent(pnlPrincipalC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(

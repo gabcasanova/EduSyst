@@ -49,6 +49,7 @@ public class TelaCadMateria extends javax.swing.JFrame {
         btnVoltarCadAdm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Criar Matéria");
 
         pnlTopAdm.setBackground(new java.awt.Color(2, 48, 71));
         pnlTopAdm.setForeground(new java.awt.Color(0, 0, 153));
@@ -94,7 +95,7 @@ public class TelaCadMateria extends javax.swing.JFrame {
         pnlBottomAdmLayout.setHorizontalGroup(
             pnlBottomAdmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBottomAdmLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(317, Short.MAX_VALUE)
                 .addComponent(lblBottomAdm2)
                 .addGap(0, 0, 0)
                 .addComponent(lblBottomAdm)
@@ -169,18 +170,20 @@ public class TelaCadMateria extends javax.swing.JFrame {
             pnlPrincipalADMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPrincipalADMLayout.createSequentialGroup()
                 .addGroup(pnlPrincipalADMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPrincipalADMLayout.createSequentialGroup()
-                        .addComponent(btnVoltarCadAdm)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 477, Short.MAX_VALUE)
-                        .addComponent(lblCadAdm))
+                    .addComponent(btnVoltarCadAdm)
                     .addGroup(pnlPrincipalADMLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(lblCPFAdm)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNomeMat, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btInserirAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(66, 66, 66))
+                        .addComponent(txtNomeMat, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlPrincipalADMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalADMLayout.createSequentialGroup()
+                        .addComponent(btInserirAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalADMLayout.createSequentialGroup()
+                        .addComponent(lblCadAdm)
+                        .addGap(39, 39, 39))))
         );
         pnlPrincipalADMLayout.setVerticalGroup(
             pnlPrincipalADMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,19 +192,18 @@ public class TelaCadMateria extends javax.swing.JFrame {
                     .addGroup(pnlPrincipalADMLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnVoltarCadAdm))
-                    .addGroup(pnlPrincipalADMLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblCadAdm)
-                        .addGroup(pnlPrincipalADMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlPrincipalADMLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(btInserirAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalADMLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlPrincipalADMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtNomeMat, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCPFAdm))
-                                .addGap(76, 76, 76)))))
+                    .addGroup(pnlPrincipalADMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlPrincipalADMLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(lblCadAdm)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btInserirAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalADMLayout.createSequentialGroup()
+                            .addGap(107, 107, 107)
+                            .addGroup(pnlPrincipalADMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtNomeMat, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblCPFAdm))
+                            .addGap(76, 76, 76))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 

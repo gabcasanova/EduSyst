@@ -6,6 +6,7 @@ package sisescola_java.paginasis.Aluno;
 
 import java.awt.Color;
 import java.sql.*;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Vector;
@@ -67,8 +68,6 @@ public class TelaAltAluno extends javax.swing.JFrame {
         boxRespAA.setSelectedIndex(-1);
     }
 
-    
-
     public void boxGeneros() {
         try {
             AlunoDAO ald = new AlunoDAO();
@@ -97,6 +96,12 @@ public class TelaAltAluno extends javax.swing.JFrame {
                     txtNomeAA.setText(a.getNomeA());
                     txtEmailAA.setText(a.getEmailA());
                     txtSenhaAA.setText("");
+                    if (a.getData_NascA() != null) {
+                        LocalDate data = LocalDate.parse(a.getData_NascA(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                        txtDiaAA.setText(String.valueOf(data.getDayOfMonth()));
+                        txtMesAA.setText(String.valueOf(data.getMonthValue()));
+                        txtAnoAA.setText(String.valueOf(data.getYear()));
+                    }
                     txtEnderecoAA.setText(a.getEnderecoA());
                     txtTelefoneAA.setText(a.getTelefoneA());
                     boxGeneroAA.setSelectedItem(String.valueOf(a.getGeneroA()));
@@ -111,9 +116,12 @@ public class TelaAltAluno extends javax.swing.JFrame {
                     txtNomeAA.setText(a.getNomeA());
                     txtEmailAA.setText(a.getEmailA());
                     txtSenhaAA.setText("");
-                    txtDiaAA.setText(String.valueOf(a.getDiaA()));
-                    txtMesAA.setText(String.valueOf(a.getMesA()));
-                    txtAnoAA.setText(String.valueOf(a.getAnoA()));
+                    if (a.getData_NascA() != null) {
+                        LocalDate data = LocalDate.parse(a.getData_NascA(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                        txtDiaAA.setText(String.valueOf(data.getDayOfMonth()));
+                        txtMesAA.setText(String.valueOf(data.getMonthValue()));
+                        txtAnoAA.setText(String.valueOf(data.getYear()));
+                    }
                     txtEnderecoAA.setText(a.getEnderecoA());
                     txtTelefoneAA.setText(a.getTelefoneA());
                     boxGeneroAA.setSelectedItem(String.valueOf(a.getGeneroA()));
@@ -183,6 +191,7 @@ public class TelaAltAluno extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Alterar Aluno");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -448,8 +457,8 @@ public class TelaAltAluno extends javax.swing.JFrame {
                                 .addComponent(txtSenhaAA)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                            .addComponent(btLimparA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btLimparA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
                             .addComponent(btAlterarA, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
                                 .addComponent(jLabel13)
@@ -462,7 +471,7 @@ public class TelaAltAluno extends javax.swing.JFrame {
                         .addComponent(txtPesquisarAlt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btPesquisaAlt)
-                        .addContainerGap(213, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pnlPrincipalCLayout.setVerticalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -710,39 +719,38 @@ public class TelaAltAluno extends javax.swing.JFrame {
         a.setNomeA(txtNomeAA.getText());
         a.setEmailA(txtEmailAA.getText());
         a.setSenhaA(txtSenhaAA.getText());
-        
 
         try {
             int dia = Integer.parseInt(txtDiaAA.getText());
             int mes = Integer.parseInt(txtMesAA.getText());
             int ano = Integer.parseInt(txtAnoAA.getText());
-            if (dia > 31 || dia == 0) {
-                JOptionPane.showMessageDialog(null, "Dia inválido");
+
+            if (dia < 1 || dia > 31) {
+                JOptionPane.showMessageDialog(null, "Dia inválido.");
                 return;
-            } else if (mes > 12 || mes == 0) {
-                JOptionPane.showMessageDialog(null, "Mês inválido");
+            } else if (mes < 1 || mes > 12) {
+                JOptionPane.showMessageDialog(null, "Mês inválido.");
                 return;
             } else if (ano < 1944 || ano > 2024) {
-                JOptionPane.showMessageDialog(null, "Ano inválido");
+                JOptionPane.showMessageDialog(null, "Ano inválido.");
                 return;
             } else {
                 LocalDate data = LocalDate.of(ano, mes, dia);
                 String dataFormatada = data.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                a.setDataA(dataFormatada);
+                a.setData_NascA(dataFormatada);  // Atualiza a data do aluno
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Dia, mês e ano devem ser números válidos.");
-            return;
         }
         a.setEnderecoA(txtEnderecoAA.getText());
         a.setTelefoneA(txtTelefoneAA.getText());
         a.setGeneroA(boxGeneroAA.getSelectedItem().toString());
         a.setId_Responsavel(getIdFromComboBox(boxRespAA, Id_Responsavel));
         try {
-            if(txtSenhaAA.getText().isBlank() || txtSenhaAA.getText().isEmpty()){
-            dao.AtualizarAlunoSemSenha(a);
-            }else{
-            dao.AtualizarAlunoComSenha(a);
+            if (txtSenhaAA.getText().isBlank() || txtSenhaAA.getText().isEmpty()) {
+                dao.AtualizarAlunoSemSenha(a);
+            } else {
+                dao.AtualizarAlunoComSenha(a);
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(TelaCadAluno.class.getName()).log(Level.SEVERE, null, ex);
