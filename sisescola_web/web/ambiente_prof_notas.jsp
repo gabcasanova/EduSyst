@@ -358,8 +358,6 @@
             quartaEtapa.disabled = false;
         }
         materiaSelect.addEventListener("change", liberarNotas);
-        
-        
     </script>
 </html>
 
