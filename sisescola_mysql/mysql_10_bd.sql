@@ -168,20 +168,24 @@ CREATE TABLE Notas (
 
 -- Criação da tabela Atividades
 CREATE TABLE Atividades (
-    Id_Atividades INT(10) NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (Id_Atividades),
+    Id_Atividade INT(10) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id_Atividade),
+    
+    Turma_ID INT(10) NOT NULL,
+    CONSTRAINT FK_Atividades_Turmas FOREIGN KEY (Turma_ID)
+        REFERENCES Turmas(Id_Turma)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+        
+	Professor_ID INT(10) NOT NULL,
+    CONSTRAINT FK_Atividades_Professor FOREIGN KEY (Professor_ID)
+        REFERENCES Professores(Id_Professor)
+		ON DELETE CASCADE ON UPDATE CASCADE,
     
     Nome_Atividade VARCHAR(255) NOT NULL,
     Texto_Atividade VARCHAR(5000) NOT NULL,
     Link_Atividade VARCHAR(255) NOT NULL,
     Etapa INT(10) NOT NULL,
     Ano INT(4) NOT NULL,
-    
-    Turma_ID INT(10) NOT NULL,
-    CONSTRAINT FK_Atividades_Turmas FOREIGN KEY (Turma_ID)
-        REFERENCES Turmas(Id_Turma)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    
     Nome_Materia VARCHAR(255) NOT NULL
 );
 
