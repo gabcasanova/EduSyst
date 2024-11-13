@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tb_login">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -45,23 +45,6 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Sou Aluno"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/bt_loginResp"
-                android:layout_width="150dp"
-                android:layout_height="220dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_grande"
-                android:drawableTop="@drawable/icn_familia"
-                android:drawablePadding="10dp"
-                android:drawableTint="#FFFFFF"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:text="Sou Responsável"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
