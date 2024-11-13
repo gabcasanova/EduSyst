@@ -306,16 +306,9 @@ public class TelaGradeProfessor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarCadAMouseExited
 
     private void btnVoltarCadAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarCadAActionPerformed
-        try {
-            TelaEscalar t = new TelaEscalar();
-            t.setVisible(true);
-            dispose();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(TelaGradeProfessor.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(TelaGradeProfessor.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        TelaProfessores p = new TelaProfessores();
+        p.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnVoltarCadAActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
