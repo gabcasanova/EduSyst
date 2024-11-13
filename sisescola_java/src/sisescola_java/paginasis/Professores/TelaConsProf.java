@@ -220,7 +220,7 @@ public class TelaConsProf extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 48, 71));
-        jLabel2.setText("Insira o nome ou CPF do responsável:");
+        jLabel2.setText("Insira o nome ou CPF do professor:");
 
         txtPesquisaProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

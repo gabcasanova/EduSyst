@@ -25,11 +25,11 @@ public class TelaAltHorario extends javax.swing.JFrame {
             Horario horario = horariosDAO.consultarHorarioPorId(pesquisa);
 
             if (horario != null) {
-                // Preenche os campos com os dados do horário encontrado
                 comboTurno.setSelectedItem(horario.getTurno());
                 txtInicio.setText(horario.getInicio());
                 txtFim.setText(horario.getFim());
                 comboDiaSemana.setSelectedItem(horario.getDia_Semana());
+                segredo.setText(String.valueOf(horario.getId_Horario()));
             } else {
                 JOptionPane.showMessageDialog(null, "Horário não encontrado.");
             }
@@ -74,6 +74,7 @@ public class TelaAltHorario extends javax.swing.JFrame {
         lblNomeE1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblNomeE = new javax.swing.JLabel();
+        segredo = new javax.swing.JLabel();
         pnlBottomC = new javax.swing.JPanel();
         lblBottomC = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -190,6 +191,9 @@ public class TelaAltHorario extends javax.swing.JFrame {
         lblNomeE.setForeground(new java.awt.Color(2, 48, 71));
         lblNomeE.setText("Turno:");
 
+        segredo.setBackground(new java.awt.Color(142, 202, 230));
+        segredo.setForeground(new java.awt.Color(142, 202, 230));
+
         javax.swing.GroupLayout pnlPrincipalCLayout = new javax.swing.GroupLayout(pnlPrincipalC);
         pnlPrincipalC.setLayout(pnlPrincipalCLayout);
         pnlPrincipalCLayout.setHorizontalGroup(
@@ -199,7 +203,9 @@ public class TelaAltHorario extends javax.swing.JFrame {
                 .addComponent(btnVoltarCadA)
                 .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
-                        .addGap(161, 161, 161)
+                        .addGap(92, 92, 92)
+                        .addComponent(segredo)
+                        .addGap(32, 32, 32)
                         .addComponent(lblIDTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
@@ -274,7 +280,9 @@ public class TelaAltHorario extends javax.swing.JFrame {
                             .addComponent(lblNomeE3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboDiaSemana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(lblIDTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIDTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(segredo))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -358,13 +366,11 @@ public class TelaAltHorario extends javax.swing.JFrame {
         Horario horario = new Horario();
         HorarioDAO horarioDAO = new HorarioDAO();
 
-// Validação dos campos
         if (txtInicio.getText().isEmpty() || txtFim.getText().isEmpty() || comboTurno.getSelectedItem() == null || comboDiaSemana.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
             return;
         }
-
-// Configuração dos valores para o objeto Horario
+        horario.setId_Horario(Integer.parseInt(segredo.getText()));
         horario.setTurno(comboTurno.getSelectedItem().toString());
         horario.setInicio(txtInicio.getText());
         horario.setFim(txtFim.getText());
@@ -444,6 +450,7 @@ public class TelaAltHorario extends javax.swing.JFrame {
     private javax.swing.JPanel pnlBottomC;
     private javax.swing.JPanel pnlPrincipalC;
     private javax.swing.JPanel pnlTopoC;
+    private javax.swing.JLabel segredo;
     private javax.swing.JFormattedTextField txtFim;
     private javax.swing.JFormattedTextField txtInicio;
     private javax.swing.JTextField txtPesquisaClasse;

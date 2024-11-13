@@ -39,7 +39,7 @@ public class TelaDelAluno extends javax.swing.JFrame {
                     lblEnderecoA.setText(a.getEnderecoA());
                     lblTelefoneA.setText(a.getTelefoneA());
                     lblGeneroA.setText(a.getGeneroA());
-                    lblResponsavelA.setText(String.valueOf(a.getId_Responsavel()));
+                    lblResponsavelA.setText(a.getNomeResponsavel());
                 }
             } else {
                 // Consulta pelo Nome
@@ -53,7 +53,7 @@ public class TelaDelAluno extends javax.swing.JFrame {
                     lblEnderecoA.setText(a.getEnderecoA());
                     lblTelefoneA.setText(a.getTelefoneA());
                     lblGeneroA.setText(a.getGeneroA());
-                    lblResponsavelA.setText(String.valueOf(a.getId_Responsavel()));
+                    lblResponsavelA.setText(a.getNomeResponsavel());
                 }
             }
         } catch (ClassNotFoundException | SQLException ex) {
@@ -321,7 +321,7 @@ public class TelaDelAluno extends javax.swing.JFrame {
 
         lblResponsavelA.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblResponsavelA.setForeground(new java.awt.Color(2, 48, 71));
-        lblResponsavelA.setText("IDResponsavel");
+        lblResponsavelA.setText("Nome Responsável");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(2, 48, 71));

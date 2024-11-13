@@ -119,9 +119,9 @@ public class MateriasDAO {
             ps.setString(1, "%" + Nome + "%");
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(null, "Matéria deletada com sucesso");
+                JOptionPane.showMessageDialog(null, "Matéria deletada com sucesso.");
             } else {
-                JOptionPane.showMessageDialog(null, "Nenhuma matéria encontrada para deletar");
+                JOptionPane.showMessageDialog(null, "Nenhuma matéria encontrada para deletar.");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao deletar matéria: " + e.getMessage());

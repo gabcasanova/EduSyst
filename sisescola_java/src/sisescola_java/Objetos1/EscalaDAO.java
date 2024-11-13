@@ -49,7 +49,7 @@ public class EscalaDAO {
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(null, "Escala removida com sucesso.");
             } else {
-                JOptionPane.showMessageDialog(null, "Nenhuma escala encontrada para o professor e horário especificados.");
+                JOptionPane.showMessageDialog(null, "Nenhuma escala encontrada para o professor.");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao remover escala: " + e.getMessage());

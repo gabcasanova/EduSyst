@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
  * @author Matheus
  */
 public class TelaCadResp extends javax.swing.JFrame {
+
     public void boxGeneros() {
         try {
             AlunoDAO ald = new AlunoDAO();
@@ -522,11 +523,11 @@ public class TelaCadResp extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void boxGeneroRespMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxGeneroRespMouseEntered
-        
+
     }//GEN-LAST:event_boxGeneroRespMouseEntered
 
     private void boxGeneroRespMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxGeneroRespMouseExited
-        
+
     }//GEN-LAST:event_boxGeneroRespMouseExited
 
     private void btLimparRespMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLimparRespMouseEntered
@@ -582,14 +583,17 @@ public class TelaCadResp extends javax.swing.JFrame {
         } else if (txtNomeResp.getText().length() >= 80) {
             JOptionPane.showMessageDialog(null, "O Nome deve conter menos que 80 caracteres.");
             return;
-        } else if (txtDiaResp.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O dia deve conter 2 números.");
+        } else if (txtDiaResp.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Dia Inválido.");
             return;
-        } else if (txtMesResp.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O mês deve conter 2 números.");
+        } else if (txtMesResp.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Mês inválido.");
             return;
         } else if (txtAnoResp.getText().length() != 4) {
             JOptionPane.showMessageDialog(null, "O ano deve conter 4 números.");
+            return;
+        }else if (txtTelefoneResp.getText().length() != 11) {
+            JOptionPane.showMessageDialog(null, "O telefone deve conter 11 números.");
             return;
         } else if (!txtTelefoneResp.getText().matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "O campo do telefone deve conter apenas números.");
@@ -597,48 +601,48 @@ public class TelaCadResp extends javax.swing.JFrame {
         } else {
             r.setCPFResp(txtCPFResp.getText());
         }
-        r.setNomeResp(txtNomeResp.getText());
-        r.setEmailResp(txtEmailResp.getText());
-        r.setSenhaResp(txtSenhaResp.getText());
+            r.setNomeResp(txtNomeResp.getText());
+            r.setEmailResp(txtEmailResp.getText());
+            r.setSenhaResp(txtSenhaResp.getText());
 
-        try {
-            int dia = Integer.parseInt(txtDiaResp.getText());
-            int mes = Integer.parseInt(txtMesResp.getText());
-            int ano = Integer.parseInt(txtAnoResp.getText());
-            if (dia > 31 || dia == 0) {
-                JOptionPane.showMessageDialog(null, "Dia inválido");
+            try {
+                int dia = Integer.parseInt(txtDiaResp.getText());
+                int mes = Integer.parseInt(txtMesResp.getText());
+                int ano = Integer.parseInt(txtAnoResp.getText());
+                if (dia > 31 || dia == 0) {
+                    JOptionPane.showMessageDialog(null, "Dia inválido");
+                    return;
+                } else if (mes > 12 || mes == 0) {
+                    JOptionPane.showMessageDialog(null, "Mês inválido");
+                    return;
+                } else if (ano < 1944 || ano > 2024) {
+                    JOptionPane.showMessageDialog(null, "Ano inválido");
+                    return;
+                } else {
+                    LocalDate data = LocalDate.of(ano, mes, dia);
+                    String dataFormatada = data.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                    r.setData_NascResp(dataFormatada);
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Dia, mês e ano devem ser números válidos.");
                 return;
-            } else if (mes > 12 || mes == 0) {
-                JOptionPane.showMessageDialog(null, "Mês inválido");
-                return;
-            } else if (ano < 1944 || ano > 2024) {
-                JOptionPane.showMessageDialog(null, "Ano inválido");
-                return;
-            } else {
-                LocalDate data = LocalDate.of(ano, mes, dia);
-                String dataFormatada = data.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                r.setData_NascResp(dataFormatada);
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Dia, mês e ano devem ser números válidos.");
-            return;
-        }
 
-        r.setGeneroResp(boxGeneroResp.getSelectedItem().toString());
-        r.setEnderecoResp(txtEnderecoResp.getText());
-        r.setTelefoneResp(txtTelefoneResp.getText());
-        try {
-            dao.cadastrarResp(r);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(TelaCadResp.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar responsável: Classe não encontrada.");
-        } catch (SQLException ex) {
-            Logger.getLogger(TelaCadResp.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar responsável: SQL exception.");
-        }
-        TelaConsResp Tcr = new TelaConsResp();
-        Tcr.setVisible(true);
-        dispose();
+            r.setGeneroResp(boxGeneroResp.getSelectedItem().toString());
+            r.setEnderecoResp(txtEnderecoResp.getText());
+            r.setTelefoneResp(txtTelefoneResp.getText());
+            try {
+                dao.cadastrarResp(r);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TelaCadResp.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar responsável: Classe não encontrada.");
+            } catch (SQLException ex) {
+                Logger.getLogger(TelaCadResp.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar responsável: SQL exception.");
+            }
+            TelaConsResp Tcr = new TelaConsResp();
+            Tcr.setVisible(true);
+            dispose();
     }//GEN-LAST:event_btInserirRespActionPerformed
 
     private void txtCPFRespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFRespActionPerformed

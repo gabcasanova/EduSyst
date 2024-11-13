@@ -150,11 +150,11 @@ public class ProfessorDAO {
             // Define os parâmetros da query
             ps.setString(1, p.getNomep());
             ps.setString(2, p.getEmailp());
-            ps.setString(4, p.getData_Nascp());
-            ps.setString(5, p.getEnderecop());
-            ps.setString(6, p.getTelefonep());
-            ps.setString(7, p.getGenerop());
-            ps.setString(8, p.getCPFp()); // Usar CPF para identificar o aluno a ser atualizado// Executa a atualização
+            ps.setString(3, p.getData_Nascp());
+            ps.setString(4, p.getEnderecop());
+            ps.setString(5, p.getTelefonep());
+            ps.setString(6, p.getGenerop());
+            ps.setString(7, p.getCPFp()); // Usar CPF para identificar o aluno a ser atualizado// Executa a atualização
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(null, "Professor atualizado com sucesso.");
@@ -178,9 +178,9 @@ public class ProfessorDAO {
             ps.setString(2, CPF);
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(null, "Professor deletado com sucesso");
+                JOptionPane.showMessageDialog(null, "Professor deletado com sucesso.");
             } else {
-                JOptionPane.showMessageDialog(null, "Nenhum professor encontrado para deletar");
+                JOptionPane.showMessageDialog(null, "Nenhum professor encontrado para deletar.");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao deletar: " + e.getMessage());

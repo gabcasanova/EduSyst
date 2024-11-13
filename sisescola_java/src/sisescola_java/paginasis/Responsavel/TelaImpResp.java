@@ -303,7 +303,7 @@ public class TelaImpResp extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(2, 48, 71));
-        jLabel10.setText("Nome ou CPF do resposável:");
+        jLabel10.setText("Nome ou CPF do responsável:");
 
         btpesquisade.setText("Pesquisar");
         btpesquisade.addActionListener(new java.awt.event.ActionListener() {
@@ -495,7 +495,7 @@ public class TelaImpResp extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarExcAMouseExited
 
     private void btnVoltarExcAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarExcAActionPerformed
-        TelaAluno a = new TelaAluno();
+        TelaResponsavel a = new TelaResponsavel();
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnVoltarExcAActionPerformed

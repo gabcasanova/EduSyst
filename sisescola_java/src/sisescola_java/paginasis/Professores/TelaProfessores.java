@@ -43,6 +43,8 @@ public class TelaProfessores extends javax.swing.JFrame {
         btAlterarP = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btVoltarP = new javax.swing.JButton();
+        btImprimirP1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         pnlBottomP = new javax.swing.JPanel();
         lblBottomC = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -164,6 +166,11 @@ public class TelaProfessores extends javax.swing.JFrame {
                 btConsultarPMouseExited(evt);
             }
         });
+        btConsultarP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarPActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 48, 71));
@@ -181,6 +188,11 @@ public class TelaProfessores extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btExcluirPMouseExited(evt);
+            }
+        });
+        btExcluirP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirPActionPerformed(evt);
             }
         });
 
@@ -232,6 +244,30 @@ public class TelaProfessores extends javax.swing.JFrame {
             }
         });
 
+        btImprimirP1.setBackground(new java.awt.Color(142, 202, 230));
+        btImprimirP1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btImprimirP1.setForeground(new java.awt.Color(2, 48, 71));
+        btImprimirP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Imagensbotãopequeno/Escala.png"))); // NOI18N
+        btImprimirP1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(2, 48, 71), 3, true));
+        btImprimirP1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btImprimirP1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btImprimirP1MouseExited(evt);
+            }
+        });
+        btImprimirP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btImprimirP1ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(2, 48, 71));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Grade Horária");
+
         javax.swing.GroupLayout pnlPrincipalPLayout = new javax.swing.GroupLayout(pnlPrincipalP);
         pnlPrincipalP.setLayout(pnlPrincipalPLayout);
         pnlPrincipalPLayout.setHorizontalGroup(
@@ -241,37 +277,37 @@ public class TelaProfessores extends javax.swing.JFrame {
                 .addComponent(btVoltarP)
                 .addGap(73, 73, 73)
                 .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPrincipalPLayout.createSequentialGroup()
-                        .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlPrincipalPLayout.createSequentialGroup()
-                                .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btAlterarP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btCadastrarP))
-                                .addGap(344, 344, 344)
-                                .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btExcluirP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btConsultarP))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
-                                        .addComponent(btImprimirP)
-                                        .addGap(222, 222, 222))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(238, 238, 238)))))
-                        .addGap(102, 102, 102))
+                    .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btAlterarP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btCadastrarP))
                     .addGroup(pnlPrincipalPLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(136, 136, 136))
+                        .addComponent(jLabel2))
                     .addGroup(pnlPrincipalPLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btImprimirP, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(16, 16, 16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlPrincipalPLayout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(btImprimirP1))
+                        .addComponent(jLabel7)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(136, 136, 136))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
+                        .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btExcluirP)
+                            .addComponent(btConsultarP))
+                        .addGap(122, 122, 122))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(148, 148, 148))))
         );
@@ -284,23 +320,32 @@ public class TelaProfessores extends javax.swing.JFrame {
                         .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addGap(7, 7, 7)
                         .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btCadastrarP)
-                            .addComponent(btConsultarP)))
-                    .addComponent(btVoltarP))
-                .addGap(8, 8, 8)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btImprimirP)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(pnlPrincipalPLayout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(btCadastrarP))
+                            .addGroup(pnlPrincipalPLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btConsultarP))))
+                    .addComponent(btVoltarP)
+                    .addGroup(pnlPrincipalPLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btImprimirP)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btAlterarP)
-                    .addComponent(btExcluirP))
+                    .addGroup(pnlPrincipalPLayout.createSequentialGroup()
+                        .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btAlterarP)
+                            .addComponent(btExcluirP)))
+                    .addGroup(pnlPrincipalPLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btImprimirP1)))
                 .addContainerGap())
         );
 
@@ -370,7 +415,9 @@ public class TelaProfessores extends javax.swing.JFrame {
     }//GEN-LAST:event_btCadastrarPActionPerformed
 
     private void btAlterarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarPActionPerformed
-        // TODO add your handling code here:
+        TelaAltProf tap = new TelaAltProf();
+        tap.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btAlterarPActionPerformed
 
     private void btVoltarAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVoltarAMouseEntered
@@ -447,6 +494,32 @@ public class TelaProfessores extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btImprimirPActionPerformed
 
+    private void btConsultarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarPActionPerformed
+        TelaConsProf tcp = new TelaConsProf();
+        tcp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btConsultarPActionPerformed
+
+    private void btExcluirPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirPActionPerformed
+        TelaDelProf tdp = new TelaDelProf();
+        tdp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btExcluirPActionPerformed
+
+    private void btImprimirP1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btImprimirP1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btImprimirP1MouseEntered
+
+    private void btImprimirP1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btImprimirP1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btImprimirP1MouseExited
+
+    private void btImprimirP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btImprimirP1ActionPerformed
+        TelaGradeProfessor tgh = new TelaGradeProfessor();
+        tgh.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btImprimirP1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -488,6 +561,7 @@ public class TelaProfessores extends javax.swing.JFrame {
     private javax.swing.JButton btConsultarP;
     private javax.swing.JButton btExcluirP;
     private javax.swing.JButton btImprimirP;
+    private javax.swing.JButton btImprimirP1;
     private javax.swing.JButton btVoltarA;
     private javax.swing.JButton btVoltarP;
     private javax.swing.JLabel jLabel1;
@@ -496,6 +570,7 @@ public class TelaProfessores extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblBottomC;
     private javax.swing.JLabel lblTopoP;
     private javax.swing.JPanel pnlBottomP;

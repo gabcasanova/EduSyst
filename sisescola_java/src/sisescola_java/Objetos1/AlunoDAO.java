@@ -27,7 +27,7 @@ public class AlunoDAO {
                 ps = con.prepareStatement(sql);
                 return ps.executeQuery();
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "Erro na conexão");
+                JOptionPane.showMessageDialog(null, "Erro na conexão.");
                 return null;
             }
         } catch (ClassNotFoundException ex) {
@@ -37,8 +37,6 @@ public class AlunoDAO {
         }
         return null;
     }
-
-    
 
     public ResultSet listarGeneros() {
         Connection con;
@@ -50,7 +48,7 @@ public class AlunoDAO {
                 ps = con.prepareStatement(sql);
                 return ps.executeQuery();
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "Erro na conexão");
+                JOptionPane.showMessageDialog(null, "Erro na conexão.");
                 return null;
             }
         } catch (ClassNotFoundException ex) {
@@ -87,9 +85,7 @@ public class AlunoDAO {
                 aluno.setEnderecoA(rs.getString("Endereco"));
                 aluno.setTelefoneA(rs.getString("Telefone"));
                 aluno.setGeneroA(rs.getString("Genero"));
-                // Adicionando a classe da turma e o nome do responsável diretamente
                 aluno.setNomeResponsavel(rs.getString("Nome_Responsavel"));
-                aluno.setClasseTurma(rs.getString("Classe")); // Se a classe for adicionada no modelo Aluno
 
                 alunos.add(aluno);
             }
@@ -133,24 +129,20 @@ public class AlunoDAO {
 
     public List<Aluno> btconsultar(String nome, String cpf) throws ClassNotFoundException, SQLException {
         List<Aluno> lista = new ArrayList<>();
-        Connection con = ConnectionFactory.getConnection(); // Método para obter a conexão com o banco
-
+        Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt;
+
         if (cpf != null && !cpf.isEmpty()) {
             stmt = con.prepareStatement(
-                    "SELECT a.*, t.Classe, r.Nome AS Nome_Responsavel "
+                    "SELECT a.*, r.Nome AS Nome_Responsavel "
                     + "FROM Alunos a "
-                    + "JOIN Turmas_Alunos ta ON a.Id_Aluno = ta.Aluno_ID "
-                    + "JOIN Turmas t ON t.Id_Turma = ta.Turma_ID "
                     + "JOIN Responsaveis r ON a.Responsavel_ID = r.Id_Responsavel "
                     + "WHERE a.CPF = ?");
             stmt.setString(1, cpf);
         } else {
             stmt = con.prepareStatement(
-                    "SELECT a.*, t.Classe, r.Nome AS Nome_Responsavel "
+                    "SELECT a.*, r.Nome AS Nome_Responsavel "
                     + "FROM Alunos a "
-                    + "JOIN Turmas_Alunos ta ON a.Id_Aluno = ta.Aluno_ID "
-                    + "JOIN Turmas t ON t.Id_Turma = ta.Turma_ID "
                     + "JOIN Responsaveis r ON a.Responsavel_ID = r.Id_Responsavel "
                     + "WHERE a.Nome LIKE ?");
             stmt.setString(1, "%" + nome + "%");
@@ -167,9 +159,6 @@ public class AlunoDAO {
             a.setEnderecoA(rs.getString("Endereco"));
             a.setTelefoneA(rs.getString("Telefone"));
             a.setGeneroA(rs.getString("Genero"));
-
-            // Agora adicionando as informações adicionais
-            a.setClasseTurma(rs.getString("Classe")); // Classe da turma
             a.setNomeResponsavel(rs.getString("Nome_Responsavel")); // Nome do responsável
 
             lista.add(a);
@@ -191,9 +180,9 @@ public class AlunoDAO {
             ps.setString(2, CPF);
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(null, "Aluno deletado com sucesso");
+                JOptionPane.showMessageDialog(null, "Aluno deletado com sucesso.");
             } else {
-                JOptionPane.showMessageDialog(null, "Nenhum aluno encontrado para deletar");
+                JOptionPane.showMessageDialog(null, "Nenhum aluno encontrado para deletar.");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao deletar: " + e.getMessage());

@@ -121,6 +121,11 @@ public class TelaResponsavel extends javax.swing.JFrame {
                 btImprimirRMouseExited(evt);
             }
         });
+        btImprimirR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btImprimirRActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(2, 48, 71));
@@ -421,6 +426,12 @@ public class TelaResponsavel extends javax.swing.JFrame {
         tcr.setVisible(true);
         dispose();
     }//GEN-LAST:event_btConsultarRActionPerformed
+
+    private void btImprimirRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btImprimirRActionPerformed
+        TelaImpResp tcr = new TelaImpResp();
+        tcr.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btImprimirRActionPerformed
 
     /**
      * @param args the command line arguments

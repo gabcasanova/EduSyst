@@ -326,6 +326,9 @@ public class TelaCadHorario extends javax.swing.JFrame {
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar horário: " + e.getMessage());
         }
+        TelaConHorario tch = new TelaConHorario();
+        tch.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btCadTurmaActionPerformed
 
     /**

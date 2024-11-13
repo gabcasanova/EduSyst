@@ -224,7 +224,8 @@ public class TelaAltResp extends javax.swing.JFrame {
         });
 
         boxGeneroAResp.setForeground(new java.awt.Color(2, 48, 71));
-        boxGeneroAResp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Homem Trans", "Mulher Trans", "Não Binário", "Outro" }));
+        boxGeneroAResp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Homem Trans", "Mulher Trans", "Não-Binário", "Outro" }));
+        boxGeneroAResp.setSelectedItem(-1);
         boxGeneroAResp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         boxGeneroAResp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -614,11 +615,11 @@ public class TelaAltResp extends javax.swing.JFrame {
         } else if (txtNomeAResp.getText().length() >= 80) {
             JOptionPane.showMessageDialog(null, "O Nome deve conter menos que 80 caracteres.");
             return;
-        } else if (txtDiaAResp.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O dia deve conter 2 números.");
+        } else if (txtDiaAResp.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Dia inválido.");
             return;
-        } else if (txtMesAResp.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O mês deve conter 2 números.");
+        } else if (txtMesAResp.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Mês inválido");
             return;
         } else if (txtAnoAResp.getText().length() != 4) {
             JOptionPane.showMessageDialog(null, "O ano deve conter 4 números.");

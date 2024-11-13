@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package sisescola_java.paginasis.Horarios;
-
-import sisescola_java.paginasis.Professores.*;
 import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -155,7 +153,7 @@ public class TelaHorarios extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(2, 48, 71));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Escala");
+        jLabel6.setText("Escalar Professor");
 
         btConsultarP.setBackground(new java.awt.Color(142, 202, 230));
         btConsultarP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -292,31 +290,37 @@ public class TelaHorarios extends javax.swing.JFrame {
                         .addGap(96, 96, 96)
                         .addComponent(jLabel4)))
                 .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jLabel6)
-                        .addGap(29, 29, 29))
                     .addGroup(pnlPrincipalPLayout.createSequentialGroup()
-                        .addGap(125, 125, 125)
                         .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btEscala)
-                            .addComponent(btEscalarMate)))
-                    .addGroup(pnlPrincipalPLayout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jLabel7)))
+                            .addGroup(pnlPrincipalPLayout.createSequentialGroup()
+                                .addGap(125, 125, 125)
+                                .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btEscala)
+                                    .addComponent(btEscalarMate)))
+                            .addGroup(pnlPrincipalPLayout.createSequentialGroup()
+                                .addGap(141, 141, 141)
+                                .addComponent(jLabel7)))
+                        .addGap(92, 92, 92))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addGap(73, 73, 73)))
                 .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(148, 148, 148))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(139, 139, 139))))
                     .addGroup(pnlPrincipalPLayout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btExcluirP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(21, 21, 21)
+                        .addGroup(pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btExcluirP)
                             .addComponent(btConsultarP))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(148, 148, 148))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalPLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(139, 139, 139))))
+                        .addContainerGap())))
         );
         pnlPrincipalPLayout.setVerticalGroup(
             pnlPrincipalPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,11 +500,11 @@ public class TelaHorarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarPActionPerformed
 
     private void btEscalarMateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEscalarMateMouseEntered
-        // TODO add your handling code here:
+        btEscalarMate.setBackground(new Color(251,133,0));
     }//GEN-LAST:event_btEscalarMateMouseEntered
 
     private void btEscalarMateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEscalarMateMouseExited
-        // TODO add your handling code here:
+        btVoltarP.setBackground(new Color(142, 202, 230));
     }//GEN-LAST:event_btEscalarMateMouseExited
 
     private void btEscalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEscalaActionPerformed

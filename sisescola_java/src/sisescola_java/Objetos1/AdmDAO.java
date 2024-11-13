@@ -56,7 +56,7 @@ public class AdmDAO {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AdmDAO.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Este Usuário não existe. " + ex);
+            JOptionPane.showMessageDialog(null, "Este usuário não existe. " + ex);
         }
         return null;
     }

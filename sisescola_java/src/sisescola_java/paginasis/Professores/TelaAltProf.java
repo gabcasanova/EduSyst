@@ -23,22 +23,6 @@ import sisescola_java.Objetos1.*;
  */
 public class TelaAltProf extends javax.swing.JFrame {
 
-    public void boxGeneros() {
-        try {
-            AlunoDAO ald = new AlunoDAO();
-            ResultSet rs = ald.listarGeneros();
-
-            while (rs.next()) {
-                String genero = rs.getString("Genero");
-                if (boxGeneroP.getItemCount() > 0 && !boxGeneroP.getItemAt(0).equals(genero)) {
-                    boxGeneroP.addItem(genero);
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro na combobox do gênero: " + e);
-        }
-    }
-
     public void btconsulta(String pesquisa) {
         ProfessorDAO adao = new ProfessorDAO();
         try {
@@ -91,7 +75,6 @@ public class TelaAltProf extends javax.swing.JFrame {
      */
     public TelaAltProf() {
         initComponents();
-        boxGeneros();
     }
 
     /**
@@ -223,8 +206,8 @@ public class TelaAltProf extends javax.swing.JFrame {
         });
 
         boxGeneroP.setForeground(new java.awt.Color(2, 48, 71));
-        boxGeneroP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Homem Trans", "Mulher Trans", "Não Binário", "Outro" }));
-        boxGeneroP.setSelectedItem(0);
+        boxGeneroP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Homem Trans", "Mulher Trans", "Não-Binário", "Outro" }));
+        boxGeneroP.setSelectedItem(-1);
         boxGeneroP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         boxGeneroP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -562,7 +545,7 @@ public class TelaAltProf extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarAltAMouseExited
 
     private void btnVoltarAltAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAltAActionPerformed
-        TelaAluno a = new TelaAluno();
+        TelaProfessores a = new TelaProfessores();
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnVoltarAltAActionPerformed
@@ -613,11 +596,11 @@ public class TelaAltProf extends javax.swing.JFrame {
         } else if (txtNomeAA.getText().length() >= 80) {
             JOptionPane.showMessageDialog(null, "O Nome deve conter menos que 80 caracteres.");
             return;
-        } else if (txtDiaAA.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O dia deve conter 2 números.");
+        } else if (txtDiaAA.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Dia inválido.");
             return;
-        } else if (txtMesAA.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O mês deve conter 2 números.");
+        } else if (txtMesAA.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Mês inválido.");
             return;
         } else if (txtAnoAA.getText().length() != 4) {
             JOptionPane.showMessageDialog(null, "O ano deve conter 4 números.");

@@ -508,11 +508,11 @@ public class TelaCadProf extends javax.swing.JFrame {
         } else if (txtNomeProf.getText().length() >= 80) {
             JOptionPane.showMessageDialog(null, "O Nome deve conter menos que 80 caracteres.");
             return;
-        } else if (txtDiaProf.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O dia deve conter 2 números.");
+        } else if (txtDiaProf.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Dia inválido.");
             return;
-        } else if (txtMesProf.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O mês deve conter 2 números.");
+        } else if (txtMesProf.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Mês inválido");
             return;
         } else if (txtAnoProf.getText().length() != 4) {
             JOptionPane.showMessageDialog(null, "O ano deve conter 4 números.");

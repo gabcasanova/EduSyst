@@ -91,7 +91,7 @@ public class ResponsavelDAO {
                 ps = con.prepareStatement(sql);
                 return ps.executeQuery();
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "Erro na conexão");
+                JOptionPane.showMessageDialog(null, "Erro na conexão.");
                 return null;
             }
         } catch (ClassNotFoundException ex) {
@@ -112,9 +112,9 @@ public class ResponsavelDAO {
             ps.setString(2, CPF);
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(null, "Responsável deletado com sucesso");
+                JOptionPane.showMessageDialog(null, "Responsável deletado com sucesso.");
             } else {
-                JOptionPane.showMessageDialog(null, "Nenhum responsável encontrado para deletar");
+                JOptionPane.showMessageDialog(null, "Nenhum responsável encontrado para deletar.");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao deletar: " + e.getMessage());

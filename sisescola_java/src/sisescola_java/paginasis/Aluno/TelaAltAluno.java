@@ -9,6 +9,7 @@ import java.sql.*;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,67 +69,27 @@ public class TelaAltAluno extends javax.swing.JFrame {
         boxRespAA.setSelectedIndex(-1);
     }
 
-    public void boxGeneros() {
-        try {
-            AlunoDAO ald = new AlunoDAO();
-            ResultSet rs = ald.listarGeneros();
-
-            while (rs.next()) {
-                String genero = rs.getString("Genero");
-                if (boxGeneroAA.getItemCount() > 0 && !boxGeneroAA.getItemAt(0).equals(genero)) {
-                    boxGeneroAA.addItem(genero);
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro na combobox do gênero: " + e);
-        }
-    }
-
     public void btconsulta(String pesquisa) {
         AlunoDAO adao = new AlunoDAO();
         try {
-            // Verifica se a string de pesquisa é um CPF (números com 11 dígitos)
-            if (pesquisa.matches("\\d{11}")) {
-                // Consulta pelo CPF
-                for (Aluno a : adao.btconsultar(null, pesquisa)) {
+            List<Aluno> alunos = pesquisa.matches("\\d{11}") ? adao.btconsultar(null, pesquisa) : adao.btconsultar(pesquisa, null);
+            if (!alunos.isEmpty()) {
+                Aluno a = alunos.get(0);
 
-                    txtCPFAA.setText(a.getCPFAluno());
-                    txtNomeAA.setText(a.getNomeA());
-                    txtEmailAA.setText(a.getEmailA());
-                    txtSenhaAA.setText("");
-                    if (a.getData_NascA() != null) {
-                        LocalDate data = LocalDate.parse(a.getData_NascA(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                        txtDiaAA.setText(String.valueOf(data.getDayOfMonth()));
-                        txtMesAA.setText(String.valueOf(data.getMonthValue()));
-                        txtAnoAA.setText(String.valueOf(data.getYear()));
-                    }
-                    txtEnderecoAA.setText(a.getEnderecoA());
-                    txtTelefoneAA.setText(a.getTelefoneA());
-                    boxGeneroAA.setSelectedItem(String.valueOf(a.getGeneroA()));
-                    String nomeResponsavel = adao.obterNomeResponsavel(a.getId_Responsavel());
-                    boxRespAA.setSelectedItem(nomeResponsavel);
+                txtCPFAA.setText(a.getCPFAluno());
+                txtNomeAA.setText(a.getNomeA());
+                txtEmailAA.setText(a.getEmailA());
+                txtSenhaAA.setText("");
+                if (a.getData_NascA() != null) {
+                    LocalDate data = LocalDate.parse(a.getData_NascA(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                    txtDiaAA.setText(String.valueOf(data.getDayOfMonth()));
+                    txtMesAA.setText(String.valueOf(data.getMonthValue()));
+                    txtAnoAA.setText(String.valueOf(data.getYear()));
                 }
-            } else {
-                // Consulta pelo Nome
-                for (Aluno a : adao.btconsultar(pesquisa, null)) {
-
-                    txtCPFAA.setText(a.getCPFAluno());
-                    txtNomeAA.setText(a.getNomeA());
-                    txtEmailAA.setText(a.getEmailA());
-                    txtSenhaAA.setText("");
-                    if (a.getData_NascA() != null) {
-                        LocalDate data = LocalDate.parse(a.getData_NascA(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                        txtDiaAA.setText(String.valueOf(data.getDayOfMonth()));
-                        txtMesAA.setText(String.valueOf(data.getMonthValue()));
-                        txtAnoAA.setText(String.valueOf(data.getYear()));
-                    }
-                    txtEnderecoAA.setText(a.getEnderecoA());
-                    txtTelefoneAA.setText(a.getTelefoneA());
-                    boxGeneroAA.setSelectedItem(String.valueOf(a.getGeneroA()));
-                    String nomeResponsavel = adao.obterNomeResponsavel(a.getId_Responsavel());
-                    boxRespAA.setSelectedItem(nomeResponsavel);
-
-                }
+                txtEnderecoAA.setText(a.getEnderecoA());
+                txtTelefoneAA.setText(a.getTelefoneA());
+                boxGeneroAA.setSelectedItem(String.valueOf(a.getGeneroA()));
+                boxRespAA.setSelectedItem(a.getNomeResponsavel()); // Nome do responsável direto
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(TelaConsAluno.class.getName()).log(Level.SEVERE, null, ex);
@@ -141,7 +102,6 @@ public class TelaAltAluno extends javax.swing.JFrame {
     public TelaAltAluno() {
         initComponents();
         boxReps();
-        boxGeneros();
     }
 
     /**
@@ -279,7 +239,7 @@ public class TelaAltAluno extends javax.swing.JFrame {
         });
 
         boxGeneroAA.setForeground(new java.awt.Color(2, 48, 71));
-        boxGeneroAA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Homem Trans", "Mulher Trans", "Não Binário", "Outro" }));
+        boxGeneroAA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Homem Trans", "Mulher Trans", "Não-Binário", "Outro" }));
         boxGeneroAA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         boxGeneroAA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -450,7 +410,7 @@ public class TelaAltAluno extends javax.swing.JFrame {
                             .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(boxRespAA, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(boxRespAA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addGap(18, 18, 18)
@@ -471,7 +431,7 @@ public class TelaAltAluno extends javax.swing.JFrame {
                         .addComponent(txtPesquisarAlt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btPesquisaAlt)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(213, Short.MAX_VALUE))))
         );
         pnlPrincipalCLayout.setVerticalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -700,11 +660,11 @@ public class TelaAltAluno extends javax.swing.JFrame {
         } else if (txtNomeAA.getText().length() >= 80) {
             JOptionPane.showMessageDialog(null, "O Nome deve conter menos que 80 caracteres.");
             return;
-        } else if (txtDiaAA.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O dia deve conter 2 números.");
+        } else if (txtDiaAA.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Dia inválido.");
             return;
-        } else if (txtMesAA.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O mês deve conter 2 números.");
+        } else if (txtMesAA.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Mês inválido.");
             return;
         } else if (txtAnoAA.getText().length() != 4) {
             JOptionPane.showMessageDialog(null, "O ano deve conter 4 números.");

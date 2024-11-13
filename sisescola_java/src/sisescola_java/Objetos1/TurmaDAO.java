@@ -213,9 +213,9 @@ public class TurmaDAO {
 
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(null, "Turma deletada com sucesso");
+                JOptionPane.showMessageDialog(null, "Turma deletada com sucesso.");
             } else {
-                JOptionPane.showMessageDialog(null, "Nenhuma turma encontrada para deletar");
+                JOptionPane.showMessageDialog(null, "Nenhuma turma encontrada para deletar.");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao deletar: " + e.getMessage());

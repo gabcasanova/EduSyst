@@ -111,7 +111,7 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="boxRespAA" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Component id="boxRespAA" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
@@ -138,7 +138,7 @@
                           <Component id="txtPesquisarAlt" min="-2" pref="230" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btPesquisaAlt" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="213" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -417,11 +417,13 @@
               <Color blue="47" green="30" red="2" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Homem Trans"/>
-                <StringItem index="1" value="Mulher Trans"/>
-                <StringItem index="2" value="N&#xe3;o Bin&#xe1;rio"/>
-                <StringItem index="3" value="Outro"/>
+              <StringArray count="6">
+                <StringItem index="0" value="Masculino"/>
+                <StringItem index="1" value="Feminino"/>
+                <StringItem index="2" value="Homem Trans"/>
+                <StringItem index="3" value="Mulher Trans"/>
+                <StringItem index="4" value="N&#xe3;o-Bin&#xe1;rio"/>
+                <StringItem index="5" value="Outro"/>
               </StringArray>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

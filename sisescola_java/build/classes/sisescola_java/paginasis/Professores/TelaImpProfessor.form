@@ -473,7 +473,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="47" green="30" red="2" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nome ou CPF do aluno:"/>
+            <Property name="text" type="java.lang.String" value="Nome ou CPF do professor:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btpesquisade">

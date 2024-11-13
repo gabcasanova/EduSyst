@@ -45,8 +45,6 @@ public class TelaMaterias extends javax.swing.JFrame {
         btAlterarA = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btVoltarM = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Matérias");
@@ -232,92 +230,65 @@ public class TelaMaterias extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(142, 202, 230));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Imagensbotãopequeno/Enturmar.png"))); // NOI18N
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(2, 48, 71), 5));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setBackground(new java.awt.Color(2, 48, 71));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(2, 48, 71));
-        jLabel6.setText("Enturmar");
-
         javax.swing.GroupLayout pnlPrincipalMLayout = new javax.swing.GroupLayout(pnlPrincipalM);
         pnlPrincipalM.setLayout(pnlPrincipalMLayout);
         pnlPrincipalMLayout.setHorizontalGroup(
             pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btVoltarM)
                 .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(27, 27, 27))
-                    .addGroup(pnlPrincipalMLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btVoltarM)
                         .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 121, Short.MAX_VALUE)
                                 .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btAlterarA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btCadastrarA, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGap(71, 71, 71))
                             .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                                .addGap(152, 152, 152)
+                                .addGap(153, 153, 153)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalMLayout.createSequentialGroup()
-                                .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addGap(57, 57, 57))
-                                    .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(74, 74, 74)))
+                            .addGroup(pnlPrincipalMLayout.createSequentialGroup()
+                                .addGap(167, 167, 167)
                                 .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btExcluirA)
                                     .addComponent(btConsultarA)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalMLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addGap(11, 11, 11)))))
+                                .addGap(13, 13, 13))))
+                    .addGroup(pnlPrincipalMLayout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(27, 27, 27)))
                 .addGap(171, 171, 171))
         );
         pnlPrincipalMLayout.setVerticalGroup(
             pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalMLayout.createSequentialGroup()
-                .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1))
+                        .addGap(25, 25, 25)
+                        .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlPrincipalMLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btConsultarA))
+                            .addGroup(pnlPrincipalMLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btCadastrarA))))
                     .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                        .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btConsultarA))
-                                    .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btCadastrarA))))
-                            .addGroup(pnlPrincipalMLayout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(btVoltarM)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                        .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))))
+                        .addGap(15, 15, 15)
+                        .addComponent(btVoltarM)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlPrincipalMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btExcluirA)
@@ -413,10 +384,6 @@ public class TelaMaterias extends javax.swing.JFrame {
         btAlterarA.setBackground(new Color(142, 202, 230));
     }//GEN-LAST:event_btAlterarAMouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        TelaEnturmar te = new TelaEnturmar();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btConsultarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarAActionPerformed
         TelaConsMateria tcom = new TelaConsMateria();
         tcom.setVisible(true);
@@ -473,13 +440,11 @@ public class TelaMaterias extends javax.swing.JFrame {
     private javax.swing.JButton btConsultarA;
     private javax.swing.JButton btExcluirA;
     private javax.swing.JButton btVoltarM;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblBottomC;
     private javax.swing.JLabel lblTopoM;
     private javax.swing.JPanel pnlBottomM;

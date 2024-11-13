@@ -40,8 +40,7 @@ public class TelaConsAluno extends javax.swing.JFrame {
                     a.getEnderecoA(),
                     a.getTelefoneA(),
                     a.getGeneroA(),
-                    a.getNomeResponsavel(),
-                    a.getClasseTurma()
+                    a.getNomeResponsavel()
                 }
                 );
             }
@@ -72,8 +71,7 @@ public class TelaConsAluno extends javax.swing.JFrame {
                         a.getTelefoneA(),
                         a.getGeneroA(),
                         a.getId_Responsavel(),
-                        a.getNomeResponsavel(),
-                        a.getClasseTurma()
+                        a.getNomeResponsavel()
                     });
                 }
             } else {
@@ -88,8 +86,7 @@ public class TelaConsAluno extends javax.swing.JFrame {
                         a.getEnderecoA(),
                         a.getTelefoneA(),
                         a.getGeneroA(),
-                        a.getNomeResponsavel(),
-                        a.getClasseTurma()
+                        a.getNomeResponsavel()
                     });
 
                 }
@@ -187,26 +184,26 @@ public class TelaConsAluno extends javax.swing.JFrame {
 
         tblConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID_Aluno", "CPF", "Nome", "Email", "Data_Nasc", "Endereco", "Telefone", "Genero", "Responsável", "Classe"
+                "ID_Aluno", "CPF", "Nome", "Email", "Data_Nasc", "Endereco", "Telefone", "Genero", "Responsável"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -236,8 +233,6 @@ public class TelaConsAluno extends javax.swing.JFrame {
             tblConsulta.getColumnModel().getColumn(7).setPreferredWidth(38);
             tblConsulta.getColumnModel().getColumn(8).setMinWidth(100);
             tblConsulta.getColumnModel().getColumn(8).setPreferredWidth(30);
-            tblConsulta.getColumnModel().getColumn(9).setMinWidth(35);
-            tblConsulta.getColumnModel().getColumn(9).setPreferredWidth(35);
         }
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

@@ -676,14 +676,17 @@ public class TelaCadAluno extends javax.swing.JFrame {
         } else if (txtNomeA.getText().length() >= 80) {
             JOptionPane.showMessageDialog(null, "O Nome deve conter menos que 80 caracteres.");
             return;
-        } else if (txtDiaA.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O dia deve conter 2 números.");
+        } else if (txtDiaA.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Dia inválido.");
             return;
-        } else if (txtMesA.getText().length() != 2) {
-            JOptionPane.showMessageDialog(null, "O mês deve conter 2 números.");
+        } else if (txtMesA.getText().length() > 2) {
+            JOptionPane.showMessageDialog(null, "Mês inválido");
             return;
         } else if (txtAnoA.getText().length() != 4) {
             JOptionPane.showMessageDialog(null, "O ano deve conter 4 números.");
+            return;
+        } else if (txtTelefoneA.getText().length() != 11) {
+            JOptionPane.showMessageDialog(null, "O telefone deve conter 11 números.");
             return;
         } else if (!txtTelefoneA.getText().matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "O campo do telefone deve conter apenas números.");

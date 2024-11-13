@@ -162,9 +162,9 @@ public class HorarioDAO {
 
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(null, "Horário deletado com sucesso");
+                JOptionPane.showMessageDialog(null, "Horário deletado com sucesso.");
             } else {
-                JOptionPane.showMessageDialog(null, "Nenhum horário encontrado para deletar");
+                JOptionPane.showMessageDialog(null, "Nenhum horário encontrado para deletar.");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao deletar: " + e.getMessage());

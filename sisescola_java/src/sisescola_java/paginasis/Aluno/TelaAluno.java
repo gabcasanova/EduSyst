@@ -47,6 +47,8 @@ public class TelaAluno extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btImprimirA = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        btGrade = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         pnlBottomA = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblBottomC = new javax.swing.JLabel();
@@ -228,6 +230,30 @@ public class TelaAluno extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Imprimir");
 
+        btGrade.setBackground(new java.awt.Color(142, 202, 230));
+        btGrade.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btGrade.setForeground(new java.awt.Color(2, 48, 71));
+        btGrade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Imagensbotãopequeno/Escala.png"))); // NOI18N
+        btGrade.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(2, 48, 71), 3, true));
+        btGrade.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btGradeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btGradeMouseExited(evt);
+            }
+        });
+        btGrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGradeActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(2, 48, 71));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Grade Horária");
+
         javax.swing.GroupLayout pnlPrincipalALayout = new javax.swing.GroupLayout(pnlPrincipalA);
         pnlPrincipalA.setLayout(pnlPrincipalALayout);
         pnlPrincipalALayout.setHorizontalGroup(
@@ -240,35 +266,40 @@ public class TelaAluno extends javax.swing.JFrame {
                     .addGroup(pnlPrincipalALayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btVoltarA)))
-                .addGap(106, 106, 106)
-                .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btImprimirA, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalALayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(16, 16, 16)))
-                .addGap(96, 96, 96)
+                .addGap(308, 308, 308)
                 .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btConsultarA)
                     .addComponent(btExcluirA))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
             .addGroup(pnlPrincipalALayout.createSequentialGroup()
                 .addGap(126, 126, 126)
                 .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPrincipalALayout.createSequentialGroup()
-                        .addComponent(btCadastrarA)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnlPrincipalALayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(162, 162, 162))
+                        .addComponent(jLabel4))
+                    .addComponent(btCadastrarA)
                     .addGroup(pnlPrincipalALayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addGroup(pnlPrincipalALayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btGrade))
+                    .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btImprimirA, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalALayout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addGap(16, 16, 16))))
+                .addGap(104, 104, 104)
+                .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalALayout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(152, 152, 152))))
+                        .addGap(152, 152, 152))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalALayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(162, 162, 162))))
         );
         pnlPrincipalALayout.setVerticalGroup(
             pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,23 +313,32 @@ public class TelaAluno extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCadastrarA)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btImprimirA)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE))
                     .addGroup(pnlPrincipalALayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btConsultarA)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlPrincipalALayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btImprimirA))
+                            .addGroup(pnlPrincipalALayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btConsultarA)))
                         .addGap(149, 149, 149)))
-                .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btAlterarA)
-                    .addComponent(btExcluirA))
+                    .addGroup(pnlPrincipalALayout.createSequentialGroup()
+                        .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlPrincipalALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btAlterarA)
+                            .addComponent(btExcluirA)))
+                    .addGroup(pnlPrincipalALayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btGrade)))
                 .addGap(30, 30, 30))
         );
 
@@ -443,6 +483,20 @@ public class TelaAluno extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btImprimirAActionPerformed
 
+    private void btGradeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btGradeMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btGradeMouseEntered
+
+    private void btGradeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btGradeMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btGradeMouseExited
+
+    private void btGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGradeActionPerformed
+        TelaGradeAluno tga = new TelaGradeAluno();
+        tga.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btGradeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -483,6 +537,7 @@ public class TelaAluno extends javax.swing.JFrame {
     private javax.swing.JButton btCadastrarA;
     private javax.swing.JButton btConsultarA;
     private javax.swing.JButton btExcluirA;
+    private javax.swing.JButton btGrade;
     private javax.swing.JButton btImprimirA;
     private javax.swing.JButton btVoltarA;
     private javax.swing.JLabel jLabel1;
@@ -491,6 +546,7 @@ public class TelaAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private java.awt.Label label1;
     private javax.swing.JLabel lblBottomC;
     private javax.swing.JLabel lblTopoA;
