@@ -102,8 +102,10 @@ public class TelaConsAluno extends javax.swing.JFrame {
      */
     public TelaConsAluno() {
         initComponents();
-        consultainicial();
+        btconsulta("");
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -138,6 +140,11 @@ public class TelaConsAluno extends javax.swing.JFrame {
 
         pnlTopoC.setBackground(new java.awt.Color(2, 48, 71));
         pnlTopoC.setMinimumSize(new java.awt.Dimension(800, 100));
+        pnlTopoC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pnlTopoCFocusGained(evt);
+            }
+        });
 
         lblTopoC.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblTopoC.setForeground(new java.awt.Color(251, 133, 0));
@@ -376,6 +383,10 @@ public class TelaConsAluno extends javax.swing.JFrame {
             consultainicial();
         }
     }//GEN-LAST:event_txtPesquisaActionPerformed
+
+    private void pnlTopoCFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pnlTopoCFocusGained
+        btconsulta("");
+    }//GEN-LAST:event_pnlTopoCFocusGained
 
     /**
      * @param args the command line arguments

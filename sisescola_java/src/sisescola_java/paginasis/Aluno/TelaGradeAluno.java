@@ -173,10 +173,10 @@ public class TelaGradeAluno extends javax.swing.JFrame {
         pnlPrincipalC.setLayout(pnlPrincipalCLayout);
         pnlPrincipalCLayout.setHorizontalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPrincipalCLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVoltarCadA)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addComponent(lblNomeE1)
@@ -190,11 +190,11 @@ public class TelaGradeAluno extends javax.swing.JFrame {
                         .addComponent(lblIDTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(205, 205, 205))
         );
         pnlPrincipalCLayout.setVerticalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPrincipalCLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
                 .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addContainerGap()
@@ -206,6 +206,7 @@ public class TelaGradeAluno extends javax.swing.JFrame {
                             .addComponent(lblNomeE1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1)
                             .addComponent(lblNomeA, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addGap(353, 353, 353)
@@ -213,7 +214,7 @@ public class TelaGradeAluno extends javax.swing.JFrame {
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         pnlBottomC.setBackground(new java.awt.Color(2, 48, 71));

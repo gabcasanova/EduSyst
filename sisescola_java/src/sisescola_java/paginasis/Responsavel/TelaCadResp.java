@@ -565,9 +565,9 @@ public class TelaCadResp extends javax.swing.JFrame {
         } else if (!txtCPFResp.getText().matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "O campo do CPF deve conter apenas números.");
             return;
-        } else if (!txtNomeResp.getText().matches("^[a-zA-Z\\s]+$")) {
+        /*} else if (!txtNomeResp.getText().matches("^[a-zA-Z\\s]+$")) {
             JOptionPane.showMessageDialog(null, "O campo do nome deve conter apenas letras.");
-            return;
+            return;*/
         } else if (!txtDiaResp.getText().matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "O campo do dia deve conter apenas números.");
             return;

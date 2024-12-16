@@ -140,17 +140,14 @@ public class TelaConsResp extends javax.swing.JFrame {
         pnlTopoC.setLayout(pnlTopoCLayout);
         pnlTopoCLayout.setHorizontalGroup(
             pnlTopoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTopoCLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(lblTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(425, Short.MAX_VALUE))
+            .addComponent(lblTopoC, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlTopoCLayout.setVerticalGroup(
             pnlTopoCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTopoCLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(18, 18, 18)
                 .addComponent(lblTopoC, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pnlPrincipalC.setBackground(new java.awt.Color(142, 202, 230));
@@ -259,7 +256,7 @@ public class TelaConsResp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btPesquisaResp))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1012, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         pnlPrincipalCLayout.setVerticalGroup(
             pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,7 +302,7 @@ public class TelaConsResp extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(0, 0, 0)
                 .addComponent(lblBottomC)
-                .addGap(303, 303, 303))
+                .addGap(458, 458, 458))
         );
         pnlBottomCLayout.setVerticalGroup(
             pnlBottomCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

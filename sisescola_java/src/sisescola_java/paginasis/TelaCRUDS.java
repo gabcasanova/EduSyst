@@ -169,7 +169,7 @@ public class TelaCRUDS extends javax.swing.JFrame {
         lblMaterias.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblMaterias.setForeground(new java.awt.Color(2, 48, 71));
         lblMaterias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMaterias.setText("Disciplinas");
+        lblMaterias.setText("Matérias");
 
         btMaterias.setBackground(new java.awt.Color(142, 202, 230));
         btMaterias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/IconeMaterias.png"))); // NOI18N
@@ -268,7 +268,7 @@ public class TelaCRUDS extends javax.swing.JFrame {
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(lblAluno)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
                         .addComponent(btDeslogar)
@@ -282,15 +282,16 @@ public class TelaCRUDS extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCLayout.createSequentialGroup()
                         .addComponent(lblTurma1)
                         .addGap(101, 101, 101)))
-                .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPrincipalCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnlPrincipalCLayout.createSequentialGroup()
+                            .addGap(19, 19, 19)
+                            .addComponent(lblProfessor))
+                        .addComponent(btMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlPrincipalCLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(lblMaterias))
-                    .addGroup(pnlPrincipalCLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(lblProfessor))
-                    .addComponent(btMaterias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)
+                        .addComponent(lblMaterias)))
                 .addGap(138, 138, 138))
         );
         pnlPrincipalCLayout.setVerticalGroup(

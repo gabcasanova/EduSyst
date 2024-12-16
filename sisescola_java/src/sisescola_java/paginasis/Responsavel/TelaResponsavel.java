@@ -412,7 +412,7 @@ public class TelaResponsavel extends javax.swing.JFrame {
     }//GEN-LAST:event_btExcluirRMouseEntered
 
     private void btExcluirRMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btExcluirRMouseExited
-        btExcluirR.setBackground(new Color(251,133,0));
+        btExcluirR.setBackground(new Color(142, 202, 230));
     }//GEN-LAST:event_btExcluirRMouseExited
 
     private void btExcluirRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirRActionPerformed

@@ -123,7 +123,7 @@
                           <Component id="lblAluno" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="81" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="btDeslogar" min="-2" max="-2" attributes="0"/>
@@ -142,17 +142,19 @@
                           <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btProfessor" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btProfessor" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                              <Component id="lblProfessor" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="btMaterias" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="lblMaterias" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
-                          <Component id="lblProfessor" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="btMaterias" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
               </Group>
@@ -188,7 +190,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblMaterias" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblMaterias" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblTurma1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -316,7 +318,7 @@
               <Color blue="47" green="30" red="2" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Disciplinas"/>
+            <Property name="text" type="java.lang.String" value="Mat&#xe9;rias"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btMaterias">

@@ -452,11 +452,11 @@ public class TelaCadAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAnoAdmActionPerformed
 
     private void boxGeneroAdmMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxGeneroAdmMouseEntered
-        boxGeneroAdm.setForeground(new Color(251, 133, 0));
+        //boxGeneroAdm.setForeground(new Color(251, 133, 0));
     }//GEN-LAST:event_boxGeneroAdmMouseEntered
 
     private void boxGeneroAdmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxGeneroAdmMouseExited
-        boxGeneroAdm.setForeground(new Color(2, 48, 71));
+        //boxGeneroAdm.setForeground(new Color(2, 48, 71));
     }//GEN-LAST:event_boxGeneroAdmMouseExited
 
     private void btInserirAdmMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btInserirAdmMouseEntered
