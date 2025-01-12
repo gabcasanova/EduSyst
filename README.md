@@ -52,6 +52,6 @@ A complexidade na organização de dados, a comunicação deficiente entre aluno
 ## Créditos
 * **Gabriel Casanova** - Líder do projeto, desenvolvedor do ambiente web, aplicativo android e banco de dados
 * **Matheus Menezes** - Desenvolvedor do ambiente desktop
-* **Gabriel Ferreira** - Desenvovledor do banco de dados
+* **Gabriel Ferreira** - Desenvolvedor do banco de dados
 * **Gabriel Henrique** - Documentação
 * **Prof. Dr. Vinicius Claro** - Orientação do TCC
