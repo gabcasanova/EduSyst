@@ -14,3 +14,5 @@ sisescola_web/build
 
 *.class
 sisescola_java/classes
+*.class
+/sisescola_java/build
