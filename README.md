@@ -46,10 +46,14 @@ Our goal with EduSyst was to promote integration between school administration, 
 <div align="center">
   <img src="design/scrshots/5.PNG" height="150">
   <img src="design/scrshots/6.PNG" height="150">
-  <img src="design/scrshots/7.PNG" height="150">
   <img src="design/scrshots/8.PNG" height="150">
+  <img src="design/scrshots/7.PNG" height="150">
 </div>
 
+### Aplicativo Android
+<div align="center">
+  <img src="design/scrshots/mobile.png" height="220">
+</div>
 
 ## Tecnologias utilizadas:
 <div align="center">
