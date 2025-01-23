@@ -44,10 +44,10 @@ Our goal with EduSyst was to promote integration between school administration, 
 
 ### Ambiente Desktop
 <div align="center">
-  <img src="design/scrshots/5.png" height="150">
-  <img src="design/scrshots/6.png" height="150">
-  <img src="design/scrshots/7.png" height="150">
-  <img src="design/scrshots/8.png" height="150">
+  <img src="design/scrshots/5.PNG" height="150">
+  <img src="design/scrshots/6.PNG" height="150">
+  <img src="design/scrshots/7.PNG" height="150">
+  <img src="design/scrshots/8.PNG" height="150">
 </div>
 
 
