@@ -42,8 +42,16 @@ Our goal with EduSyst was to promote integration between school administration, 
   <img src="design/scrshots/4.png" width="288">
 </div>
 
+### Ambiente Desktop
+<div align="center">
+  <img src="design/scrshots/5.png" height="150">
+  <img src="design/scrshots/6.png" height="150">
+  <img src="design/scrshots/7.png" height="150">
+  <img src="design/scrshots/8.png" height="150">
+</div>
 
-### Tecnologias utilizadas:
+
+## Tecnologias utilizadas:
 <div align="center">
 
 ![NetBeans IDE](https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)
