@@ -35,10 +35,12 @@ Our goal with EduSyst was to promote integration between school administration, 
 
 ## Screenshots
 ### Ambiente Web
-![screenshot_1](/design/scrshots/1.png)
-![screenshot_1](/design/scrshots/1.png)
-![screenshot_1](/design/scrshots/1.png)
-![screenshot_1](/design/scrshots/1.png)
+<div align="center">
+  <img src="design/scrshots/1.png" width="288">
+  <img src="design/scrshots/2.png" width="288">
+  <img src="design/scrshots/3.png" width="288">
+  <img src="design/scrshots/4.png" width="288">
+</div>
 
 
 ### Tecnologias utilizadas:
