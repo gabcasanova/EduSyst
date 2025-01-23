@@ -11,3 +11,5 @@ sisescola_web/build
 
 *.lock
 *.lck
+
+*.class
