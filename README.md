@@ -23,18 +23,22 @@
 </div>
 
 ## Sobre o Projeto / About This Project
-🇧🇷 A complexidade na organização de dados, a comunicação deficiente entre alunos, professores e responsáveis, juntamente com as dificuldades na gestão acadêmica e de recursos, são problemas enfrentados pelas instituições de ensino público no estado do Rio de Janeiro. Para enfrentar esses desafios e otimizar a administração escolar, o EduSyst foi desenvolvido como uma solução abrangente, eficiente e segura, que integra todas as funções necessárias para melhorar o gerenciamento acadêmico e a comunicação no ambiente escolar.
+EduSyst é um sistema de informações estudantis (SIS) projetado para modernizar e otimizar a administração escolar de escolas públicas na cidade do Rio de Janeiro, Brasil. O sistema conecta alunos, pais, professores e administradores por meio de uma plataforma digital unificada, aprimorando a comunicação e a organização. O EduSyst é composto por três aplicativos interconectados, cada um adaptado às necessidades dos diferentes usuários e alimentado por um banco de dados MySQL centralizado.
 
-Nosso objetivo com o EduSyst foi promover uma integração entre a administração escolar, alunos, professores e responsáveis em uma única plataforma digital. Para tornar isso possível, utilizamos um conjunto robusto de tecnologias focadas em Java, incluindo: Java SE para o sistema desktop, Java EE para o backend do ambiente web, Android Studio com Java para o aplicativo móvel e MySQL para o banco de dados.
+- O **Aplicativo Desktop EduSyst**, desenvolvido com Java SE, Swing e a API JDBC, foi projetado para administradores escolares. Ele gerencia cadastros de alunos e professores, organização de cursos, cronogramas e geração de relatórios, garantindo operações institucionais eficientes.
+- O **Aplicativo Web EduSyst**, desenvolvido com Java Server Pages (JSP), HTML, CSS, Bootstrap e JavaScript, atende a alunos, professores e pais. Os professores podem gerenciar notas, históricos escolares e avaliações dos alunos, além de se comunicarem com os estudantes por meio de um sistema de chat de classe. Pais e alunos têm acesso a horários de aula, tarefas e informações dos professores.
+- O **Aplicativo Mobile EduSyst**, construído com Android Studio (Java) e PHP para conectividade MySQL, oferece uma experiência nativa no Android. Ele fornece aos alunos, professores e pais as mesmas funcionalidades essenciais do aplicativo web, garantindo acessibilidade em qualquer lugar.
 
-<hr>
+<hr />
 
-🇺🇸 Complex data organization, poor communication between students, teachers and guardians, along with difficulties in academic and resource management, are problems faced by public education institutions in the state of Rio de Janeiro. To address these challenges and optimize school administration, EduSyst was developed as a comprehensive, efficient and secure solution that integrates all the functions necessary to improve academic management and communication in the school environment.
+EduSyst is a student information system (SIS) designed to modernize and streamline school administration in the public schools of Rio de Janeiro, Brazil. The system connects students, parents, teachers, and administrators through a unified digital platform, enhancing communication and organization. EduSyst consists of three interconnected applications, each tailored to different user needs and powered by a centralized MySQL database.
 
-Our goal with EduSyst was to promote integration between school administration, students, teachers and guardians on a single digital platform. To make this possible, we used a robust set of Java-focused technologies, including: Java SE for the desktop system, Java EE for the backend of the web environment, Android Studio with Java for the mobile application and MySQL for the database.
+- The **EduSyst Desktop App**, built with Java SE, Swing, and the JDBC API, is designed for school administrators. It handles student and teacher registrations, course management, scheduling, and report generation, ensuring smooth institutional operations.
+- The **EduSyst Web App**, developed using Java Server Pages (JSP), HTML, CSS, Bootstrap, and JavaScript, serves students, teachers, and parents. Teachers can manage grades, transcripts, and student assessments while also communicating with students through a class chat system. Parents and students can access class schedules, assignments, and teacher information.
+- The **EduSyst Mobile App**, built with Android Studio (Java) and PHP for MySQL connectivity, offers a native mobile experience. It provides students, teachers, and parents with the same essential functionalities as the web app, ensuring accessibility on the go.
 
 ## Screenshots
-### Ambiente Web
+### Web
 <div align="center">
   <img src="design/scrshots/1.png" width="288">
   <img src="design/scrshots/2.png" width="288">
@@ -42,7 +46,7 @@ Our goal with EduSyst was to promote integration between school administration, 
   <img src="design/scrshots/4.png" width="288">
 </div>
 
-### Ambiente Desktop
+### Desktop
 <div align="center">
   <img src="design/scrshots/5.PNG" height="150">
   <img src="design/scrshots/6.PNG" height="150">
@@ -50,12 +54,12 @@ Our goal with EduSyst was to promote integration between school administration, 
   <img src="design/scrshots/7.PNG" height="150">
 </div>
 
-### Aplicativo Android
+### Android
 <div align="center">
   <img src="design/scrshots/mobile.png" height="220">
 </div>
 
-## Tecnologias utilizadas:
+## Tech stack:
 <div align="center">
 
 ![NetBeans IDE](https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)
